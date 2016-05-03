@@ -7,9 +7,7 @@ class ApplicationController < ActionController::Base
   end
   
   def cool(text)
-    puts "We can square any number. Enter a number"
-    text = gets.chomp
-    puts text**2
+    render tedt: "I am so cool!"
   end
     
   # Prevent CSRF attacks by raising an exception.
