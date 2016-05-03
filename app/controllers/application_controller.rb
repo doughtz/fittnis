@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
   
   def cool(text)
-    render tedt: "I am so cool!"
+    render text: "I am so cool!"
   end
     
   # Prevent CSRF attacks by raising an exception.
