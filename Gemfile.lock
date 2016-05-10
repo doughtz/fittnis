@@ -162,7 +162,7 @@ DEPENDENCIES
   jquery-rails (= 4.0.3)
   pg (= 0.17.1)
   rails (= 4.2.2)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   sass-rails (= 5.0.2)
   sdoc (= 0.4.0)
   spring (= 1.1.3)
