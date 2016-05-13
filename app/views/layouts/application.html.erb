@@ -5,11 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<div class=logo>
-  <a href="https://fitniss-ddoughty.c9users.io"><%= image_tag("Drawing", size: "129x46") %></a>
+  
+  <div id=logo>
+    <a href="https://fitniss-ddoughty.c9users.io"><%= image_tag("Drawing", size: "129x46") %></a>
   </div>
+  
+  <div id="menu">
+    <li class="first_bullet">Upload</li>
+    <li>Help</li>
+    <li>Sign Up</li>
+    <li>Login</li>
+  </div>
+<div id="spacer"></div>
+  
 <%= yield %>
 
 </body>
