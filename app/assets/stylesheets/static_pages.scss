@@ -2,49 +2,117 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#container{
-    width:100%;
-    height:600px;
-    position:relative;
-    border:1px solid #f5f5f5;
-    background-color: #f5f5f5;
-
-}
-.box{
-    /* border:1px solid use when locating boxes for dev red*/;
-    position:absolute;
-    width:300px;
-    height:350px;
-
-}
-.box2{
-    border:1px solid red;
-    position:absolute;
-    width: 100%;
+.header1 {
+    margin: 0 auto;
+    color: #565a5c;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    width: 600px;
     text-align: center;
+    padding-top: 20px;
 
 }
-.top{top:0; padding: 15px;}
-.middle{top:20%;margin-top: 0px;/*half of the .box height*/}
-.bottom{bottom:0}
 
-.left{left: 10%;
-}
-.center{left:40%;margin-left:-20px;/*half of the .box width*/
+.header2 {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
     font-size: 14pt;
+    color: #565a5c;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-.right{right:10%;}
 
 span {
-    color: orange;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    font-size: 28pt;
-    border: 1px solid rgba(245,245,245,.6);
-    background-color: rgb(245,245,245); /*fallback for non-supported browser */
-    background-color: rgba(245,245,245, .4);
+    font-size: 24pt;
+    text-align: center;
+/*    border: 1px solid rgba(245,245,245,.6); */
+/*    background-color: rgb(245,245,245); /*fallback for non-supported browser */
+/*    background-color: rgba(245,245,245, .4); */
     height: 50px;
     line-height: 50px;
+    padding-left: 25px;
+}
+
+button1 {
+    bottom: 0;
+}
+
+#container1{ /* searchbar container */
+    width:100%;
+    height:30px;
+    position:relative;
+    border:1px solid #f5f5f5;
+    background-color: #f5f5f5;
+    line-height: 30px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    color: rgba(86,90,92, .4);
+}
+
+#container2{
+    width:100%;
+    height:900px;
+    position:relative;
+    border:1px solid #f5f5f5;
+    background-color: #f5f5f5;
+}
+
+.searchbar {
+    width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid rgba(86,90,92, .4);
+    padding-left: 4px;
+}
+
+.button1 {
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    clear: both;
+    border: 1px solid rgba(86,90,92,.1); 
+    background-color: rgb(86,90,92); /*fallback for non-supported browser */
+    background-color: rgba(86,90,92, .4);
+    line-height: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.button1:hover {
+    background-color: grey;
+}
+
+.catimage {
+    float: left;
+    width: 300px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.image-container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.image-container2 {
+    margin: 0 auto;
+    width: 1000px;
+    padding-top: 25px;
+    clear: both;
+}
+
+.catimage span:hover {
+    text-decoration: underline;
 }

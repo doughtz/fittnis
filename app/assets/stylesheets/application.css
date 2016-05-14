@@ -17,7 +17,7 @@
 html, body, form, fieldset, table, tr, td, img {
     margin: 0;
     padding: 0;
-    font: 100%/150% Century Gothic,helvetica,calibri,sans-serif;
+    font: 100%/150% Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 input, button, select, textarea, optgroup, option {
@@ -42,9 +42,11 @@ input, button, select, textarea, optgroup, option {
 }
 #logo {
       float: left;
-      height: 50px;
-      line-height: 50px;
+      height: 46px;
+      line-height: 46px;
       white-space: nowrap;
+      margin-top: 10px;
+      margin-bottom: -12px;
 }
 
 #menu {
@@ -52,6 +54,7 @@ input, button, select, textarea, optgroup, option {
     height: 50px;
     line-height: 50px;
     white-space: nowrap;
+    margin-right: 20px;
 
 }
 

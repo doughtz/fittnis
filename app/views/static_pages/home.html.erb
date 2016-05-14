@@ -1,19 +1,27 @@
-<div id="container" class="box">
+<div id="container1">
+  <div class="searchbar">Search</div>
+</div>
 
-    <div class="box2 top">
-      Search Box
+<div id="container2">
+    <div class="header1">
+      Professional workout videos
     </div>
-
     
-    <div class="box middle left"><%= image_tag("cardio_300x350", size: "300x350") %>
-    <h1><span>Cardio</span></h1></div>
-    <div class="box middle center"><%= image_tag("pushup_male_300x350", size: "300x350") %>
-    <h1><span>Strength</span></h1></div>
-    <div class="box middle right"><%= image_tag("stretching_300x350", size: "300x350") %>
-    <h1><span>Stretching</span></h1></div>
-<% if false %>    
-    <div class="box bottom left"></div>
-    <div class="box bottom center"></div>
-    <div class="box bottom right"></div>
-<% end %>
+    <div class="header2">  
+    Find your favorite type of workout to do at home.
+    </div>
+    
+  <div class="image-container">
+    <div class="catimage"><%= image_tag("cardionew_300x340", size: "300x340") %><span>Cardio</span></div>
+    <div class="catimage"><%= image_tag("pushup_male_300x350", size: "300x340") %><span>Strength</span></div>
+    <div class="catimage"><%= image_tag("stretching_300x340", size: "300x340") %><span>Streching</span></div>
+    </div>
+    
+  <div class="image-container2">
+    <div class="catimage"><%= image_tag("cardionew_300x340", size: "300x340") %><span>Cardio</span></div>
+    <div class="catimage"><%= image_tag("pushup_male_300x350", size: "300x340") %><span>Strength</span></div>
+    <div class="catimage"><%= image_tag("stretching_300x340", size: "300x340") %><span>Streching</span></div>
+    <div class="button1">See all categories</div>
+  </div>
+  
 </div>
