@@ -1,0 +1,344 @@
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.header1 {
+  margin: 0 auto;
+  color: #565a5c;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  width: 600px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* line 17, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.header2 {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+  font-size: 14pt;
+  color: #565a5c;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.header3 {
+  margin: 0 auto;
+  color: #565a5c;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 28pt;
+  font-weight: bold;
+  width: 600px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+span {
+  color: white;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 20pt;
+  text-align: center;
+  /*    border: 1px solid rgba(245,245,245,.6); */
+  /*    background-color: rgb(245,245,245); /*fallback for non-supported browser */
+  /*    background-color: rgba(245,245,245, .4); */
+  height: 50px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+
+/* line 58, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+span2 {
+  color: #565a5c;
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 16pt;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 25px;
+  padding-top: -200px;
+  width: 200px;
+}
+
+/* line 75, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+button1 {
+  bottom: 0;
+}
+
+/* line 79, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+#container1 {
+  /* searchbar container */
+  width: 100%;
+  height: 40px;
+  position: relative;
+  border: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+  line-height: 40px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  color: rgba(86, 90, 92, 0.4);
+}
+
+/* line 91, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+#container2 {
+  width: 100%;
+  height: 945px;
+  position: relative;
+  border: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+}
+
+/* line 99, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+#container3 {
+  width: 100%;
+  height: 490px;
+  position: relative;
+  border: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+  padding-top: 40px;
+}
+
+/* line 108, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.searchbar {
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border: 2px solid rgba(86, 90, 92, 0.4);
+  padding-left: 4px;
+}
+
+/* line 116, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.button1 {
+  margin: 10 auto;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(-50%);
+  color: #565a5c;
+  clear: both;
+  border: 1px solid rgba(86, 90, 92, 0.2);
+  background-color: white;
+  line-height: 40px;
+  /*    padding-right: 100px;
+      padding-left: 100px;
+      padding-top: 5px;
+      padding-bottom: 5px; */
+  width: 300px;
+}
+
+/* line 135, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.button1:hover {
+  border: 1px solid rgba(86, 90, 92, 0.5);
+}
+
+/* line 139, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.button2 {
+  margin: 10 auto;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #565a5c;
+  clear: both;
+  border: 1px solid rgba(86, 90, 92, 0.2);
+  background-color: white;
+  line-height: 40px;
+  /*    padding-right: 100px;
+      padding-left: 100px;
+      padding-top: 5px;
+      padding-bottom: 5px; */
+  width: 300px;
+}
+
+/* line 158, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.button2:hover {
+  border: 1px solid rgba(86, 90, 92, 0.5);
+}
+
+/* line 162, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.catimage {
+  float: left;
+  /*    width: 300px; */
+  padding-left: 25px;
+  position: relative;
+}
+
+/* line 169, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.catimage2 {
+  float: left;
+  padding-left: 45px;
+  position: relative;
+  height: 240px;
+}
+
+/* line 176, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.image-container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+/* line 181, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.image-container2 {
+  margin: 0 auto;
+  width: 1000px;
+  padding-top: 25px;
+  clear: both;
+}
+
+/* line 188, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.image-container3 {
+  margin: 0 auto;
+  width: 1000px;
+  padding-top: 25px;
+  clear: both;
+}
+
+/* line 195, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.catimage span:hover {
+  text-decoration: underline;
+}
+
+/* line 199, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
+.bottomimage {
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(-20%);
+  color: #565a5c;
+  clear: both;
+  width: 300px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+ 
+html, body, form, fieldset, table, tr, td, img {
+    margin: 0;
+    padding: 0;
+    font: 100%/150% Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+input, button, select, textarea, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+ 
+ .center {
+     display: block;
+     margin: auto;
+ }
+ 
+ #header {
+     padding-bottom: 3%;
+     position: relative;
+ }
+ 
+#videobg {
+    position: relative;
+}
+#logo {
+      float: left;
+      height: 46px;
+      line-height: 46px;
+      white-space: nowrap;
+      margin-top: 10px;
+      margin-bottom: -12px;
+      padding-left: 10%;
+}
+
+#menu {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    white-space: nowrap;
+    margin-right: 20px;
+    padding-right: 8%;
+
+}
+
+#menu li {
+    display: inline;
+    padding: 10px;
+}
+
+#menu li {
+    color: orange;
+    
+}
+
+#searchbar {
+    clear:left;
+    width: 100%;
+    float: left;
+
+}
+
+#searchbar img {
+
+    text-align: center;
+}
+
+#spacer {
+    clear:both;
+    height: 10%;
+    margin-bottom: 5px;
+}
+
+.first_bullet {
+    border: 1px solid grey; margin: 0; line-height: 45px;
+    
+}
+
+#footerbg {
+    height: 20px;
+    background-color: white;
+}
+
+menutitle {
+    font-size: 12pt;
+    color: orange;
+    padding-top: 15px;
+}
+
+#footerbg ul li {
+    color: orange;
+    font-size: 11pt;
+    display: inline;
+    padding-right: 10px;
+    font-family: Roboto;
+}
+
+.footermenu {
+    float: right;
+    padding-right: 40px;
+}
