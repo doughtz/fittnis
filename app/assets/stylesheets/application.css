@@ -47,6 +47,7 @@ input, button, select, textarea, optgroup, option {
       white-space: nowrap;
       margin-top: 10px;
       margin-bottom: -12px;
+      padding-left: 10%;
 }
 
 #menu {
@@ -55,6 +56,7 @@ input, button, select, textarea, optgroup, option {
     line-height: 50px;
     white-space: nowrap;
     margin-right: 20px;
+    padding-right: 8%;
 
 }
 
@@ -89,4 +91,28 @@ input, button, select, textarea, optgroup, option {
 .first_bullet {
     border: 1px solid grey; margin: 0; line-height: 45px;
     
+}
+
+#footerbg {
+    height: 20px;
+    background-color: white;
+}
+
+menutitle {
+    font-size: 12pt;
+    color: orange;
+    padding-top: 15px;
+}
+
+#footerbg ul li {
+    color: orange;
+    font-size: 11pt;
+    display: inline;
+    padding-right: 10px;
+    font-family: Roboto;
+}
+
+.footermenu {
+    float: right;
+    padding-right: 40px;
 }
