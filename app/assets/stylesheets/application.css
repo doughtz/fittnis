@@ -63,10 +63,18 @@ input, button, select, textarea, optgroup, option {
 #menu li {
     display: inline;
     padding: 10px;
+    color: orange;
 }
 
-#menu li {
+#menu li a {
     color: orange;
+    text-decoration: none;
+    
+}
+
+#menu li a:hover {
+    color: #d68b00;
+    text-decoration: none;
     
 }
 
