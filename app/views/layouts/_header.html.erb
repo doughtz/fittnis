@@ -1,0 +1,44 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container" style="padding-top: 20px; height: 50px">
+    <%= link_to "fittniss", '/', id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to "Users", '#' %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+        <li style="padding-right: 5px;"><%= link_to "Sign Up", '/users/new', :style => 'background-color: orange', :class => "navbar-nav li a:hover" %></li>
+        <li><%= link_to "Log in", '/login' %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  <h1>Professional workout videos</h1>
+  <remove><h2>Find your favorite workout to do at home.</h2></remove>
+  <div class="header-menu">
+    <div class="center category-menu">
+      <ul>
+      <li style="border-left: 0px solid white">Filter&nbsp;&nbsp;<%= image_tag("down_arrow", size: "25x25") %></li><!--
+      --><li>Cardio</li><!--
+      --><li>Strength</li><!--
+      --><li>Yoga</li><!--
+      --><li>Zumba</li><!--
+      --><li>Pilates</li><!--
+      --><li>Stretching</li><!--
+      --><li>More&nbsp;<%= image_tag("down_arrow", size: "25x25") %></li><!--
+      --></ul>
+    </div>
+  </div>
+</header>
