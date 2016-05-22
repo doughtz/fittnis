@@ -1,0 +1,284 @@
+$navbar-inverse-bg: orange;
+$navbar-inverse-brand-color: white;
+$navbar-inverse-border: #D3D3D3;
+
+.container-fluid{
+   padding: 0 !important;
+}
+
+nav {
+  height: 40px !important;
+}
+
+header h1 {
+  color: white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  letter-spacing: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 28pt;
+}
+
+header h2 {
+  color: rgba(255,255,255,.7);
+  font-size: 16pt;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.StreamsHero-buttonContainer {
+    color: white;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: right;
+    width: 95%;
+    display: block;
+    line-height: 18px;
+    font-size: 14pt;
+}
+
+.StreamsHero-buttonContainer li a {
+}
+
+/* .navbar-inverse {
+  background-color: $navbar-inverse-bg;
+  border-color: $navbar-inverse-border;
+
+  .navbar-brand {
+    color: $navbar-inverse-brand-color;
+    &:hover,
+    &:focus {
+      color: $navbar-inverse-brand-hover-color;
+      background-color: $navbar-inverse-brand-hover-bg;
+    }
+  }
+
+
+.navbar-text {
+    color: $navbar-inverse-color;
+  }
+  */
+.navbar-inverse {
+  height: 270px;
+}
+.navbar-nav {
+    > li > a {
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background-color: rgba(255,255,255,.3);
+      color: white !important;
+      width: 120px !important;
+      text-align: center !important;
+      height: 40px;
+      padding-top: 0 !important;
+      line-height: 40px !important;
+      
+}
+}
+
+.navbar-nav {
+    > li > a:hover {
+      color: orange !important;
+      background-color: white !important;
+      
+}
+}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+/* universal */
+
+* {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+body {
+  padding-top: 260px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2.5em;
+  color: white;
+  line-height: 45px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+header {
+/* animation magic */
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+}
+
+.bodyshrink {
+  padding-top: 150px;
+}
+
+.bodyshrink1 {
+  padding-top: 150px;
+}
+
+.shrink {
+  height: 150px;
+  & h1 {
+    margin-top: -100px;
+  }
+  & h2 {
+    color: orange;
+  }
+}
+
+.header-menu {
+  height: 60px;
+  background: white;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.category-menu {
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  & ul {
+    text-align: center;
+    width: 99%;
+    overflow: auto;
+  }
+  
+  & li {
+    color: #777;
+    border-left: 1px solid #D3D3D3;
+    display: inline-block;
+    list-style: none;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14pt;
+    text-align: center;
+    padding: 0px 30px 0px 30px;
+  }
+  & li.last {
+    border-right: 1px solid #D3D3D3;
+  }
+  & li:hover {
+    border-bottom: 5px solid #777;
+    transition: left 25ms ease-in-out, right 25ms ease-in-out;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+.wrapper-image {
+  clear: both;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* forms */
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    color: black;
+    font-size: 14pt;
+    font-weight: normal;
+    float: left;
+    border: 1px solid red;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+padright {
+  padding-left: 20px;
+  font-weight: normal;
+}

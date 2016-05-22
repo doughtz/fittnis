@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
-</head>
-<body>
-<div class="header">  
-  <div id=logo>
-    <a href="https://fitniss-ddoughty.c9users.io"><%= image_tag("logo_edited", size: "160x28") %></a>
-  </div>
-  
-  <div id="menu">
-    <li class="first_bullet">Upload</li>
-    <li>Help</li>
-    <li>Sign Up</li>
-    <li>Login</li>
-  </div>
-  </div>
-<div id="spacer"></div>
-  <% flash.each do |message_type, message| %>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <% if current_page?(root_path) %>
+  <body>
+    <% else %>
+    <body class="bodyshrink1">
+      <% end %>
+    <% if current_page?(root_path) %>
+    <%= render 'layouts/header' %>
+<% else %>
+    <%= render 'layouts/shrink_header' %>
+<% end %>
+    <div class="container-fluid">
+      <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>  
-<%= yield %>
-<footer>
-  <div id="footerbg">
-<div class="footermenu">
-  <ul>
-  <li>About</li>
-  <li>Careers</li>
-  <li>Press</li>
-  <li>Help</li>
-  <li>Policies</li>
-  <li>Terms & Privacy</li>
-  </ul>
-</div>
-    
-  </div>
-</footer>
-<%= debug(params) if Rails.env.development? %>
-</body>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
 </html>
