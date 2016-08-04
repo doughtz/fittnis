@@ -1,0 +1,50 @@
+<% provide(:title, 'New Video') %>
+<div style="background:white !important" class="jumbotron">
+      <h1>Create Video</h1>
+
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">        
+<%= form_for(@video) do |f| %>
+  
+      <%= f.label :user_id %>
+      <%= f.number_field :user_id %>
+      
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      
+      <%= f.label :length %>
+      <%= f.number_field :length %>      
+
+      <%= f.label :tags %>
+      <%= f.text_field :tags %>
+
+      <%= f.label :equipment %>
+      <%= f.text_field :equipment %>
+
+      <%= f.label :videofile %>
+      <%= f.text_field :videofile %>
+      
+      <%= f.label :rating %>
+      <%= f.number_field :rating %>      
+
+      <%= f.label :categor %>
+      <%= f.text_field :categor %>
+      
+      <%= f.label :calories %>
+      <%= f.number_field :calories %>      
+
+      <%= f.label :workouts %>
+      <%= f.number_field :workouts %>
+      
+      <%= f.label :workoutseconds %>
+      <%= f.number_field :workoutseconds %>
+      
+
+      <%= f.submit "Create new video", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container" style="padding-top: 20px; height: 50px">
-    <%= link_to "fittniss", '/', id: "logo" %>
+  <div class="container" style="padding-top: 10px; height: 5px">
+    <%= link_to "fittnis", '/', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
@@ -25,21 +25,5 @@
         <% end %>
       </ul>
     </nav>
-  </div>
-  <h1>High Quality Workout Videos</h1>
-  <remove><h2>Find your favorite workout to do at home.</h2></remove>
-  <div class="header-menu">
-    <div class="center category-menu">
-      <ul>
-      <li style="border-left: 0px solid white">Filter&nbsp;&nbsp;<%= image_tag("down_arrow", size: "25x25") %></li><!--
-      --><li>Cardio</li><!--
-      --><li>Strength</li><!--
-      --><li>Yoga</li><!--
-      --><li>Zumba</li><!--
-      --><li>Pilates</li><!--
-      --><li>Stretching</li><!--
-      --><li>More&nbsp;<%= image_tag("down_arrow", size: "25x25") %></li><!--
-      --></ul>
-    </div>
   </div>
 </header>

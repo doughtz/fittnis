@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @videos = @user.videos.paginate(page: params[:page])
   end
   
   def create
@@ -45,6 +46,32 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
+  
+    # Increases User's workouts after video is watched
+    def increase_workouts
+      @user = current_user
+      if logged_in?
+        if @user.workouts == nil
+          @user.workouts = 0
+        end
+        @user.workouts += 1
+        @user.save
+        render(json: { message: "Workouts increased" }, status: :ok) and return
+      end
+    end
+    
+    # Increases User's workout seconds after video is watched
+    def increase_workoutseconds
+      @user = current_user
+      if logged_in?
+        if @user.workoutseconds == nil
+          @user.workoutseconds = 0
+        end
+        @user.workoutseconds += 1
+        @user.save
+        render(json: { message: "Workouts increased" }, status: :ok) and return
+      end
+    end
 
   private
 
@@ -74,6 +101,7 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+  
     
 end
 
