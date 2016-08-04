@@ -16,17 +16,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on("scroll", function(){
-		if
-      ($(document).scrollTop() > 1){
-		  $("header").addClass("shrink");
-		  $("body").addClass("bodyshrink");
-			updateSliderMargin();
-		}
-		else
-		{
-			$("header").removeClass("shrink");
-			$("body").removeClass("bodyshrink");
-			updateSliderMargin();
-		}
-	});

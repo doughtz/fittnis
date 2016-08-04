@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527005637) do
+ActiveRecord::Schema.define(version: 20160710201837) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "username"
     t.string   "email"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "admin",             default: false
@@ -27,8 +27,34 @@ ActiveRecord::Schema.define(version: 20160527005637) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.integer  "calories"
+    t.integer  "workouts"
+    t.integer  "workoutseconds"
+    t.string   "videolog",          default: "--- []\n"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.text     "title"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "length"
+    t.text     "tags"
+    t.text     "equipment"
+    t.text     "videofile"
+    t.integer  "rating"
+    t.text     "categor"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "calories"
+    t.integer  "workouts"
+    t.integer  "workoutseconds"
+    t.string   "videolog",       default: "--- []\n"
+    t.string   "mediakey"
+  end
+
+  add_index "videos", ["user_id", "created_at"], name: "index_videos_on_user_id_and_created_at"
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id"
 
 end

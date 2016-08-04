@@ -1,0 +1,8 @@
+<% provide(:title, 'Past Workouts') %>
+<h1>Past Workouts</h1>
+
+<%= will_paginate %>
+<ol class="users">
+  <%= render @videos %>
+</ol>
+<%= will_paginate %>
