@@ -57,19 +57,27 @@ class UsersController < ApplicationController
         @user.workouts += 1
         @user.save
         render(json: { message: "Workouts increased" }, status: :ok) and return
+      else 
+        render(json: { message: "Workouts increased" }, status: :ok) and return
       end
     end
     
-    # Increases User's workout seconds after video is watched
+    # Increases User's workout seconds & calories while video is watched
     def increase_workoutseconds
+      @vidcalories = Video.videocalories(Time.now.strftime("%Y%m%d").to_i)
+      @vidseconds = Video.videoseconds(Time.now.strftime("%Y%m%d").to_i)
       @user = current_user
       if logged_in?
         if @user.workoutseconds == nil
           @user.workoutseconds = 0
         end
+        if @user.calories == nil
+          @user.calories = 0
+        end
         @user.workoutseconds += 1
+        @user.calories += @vidcalories.to_f/@vidseconds
         @user.save
-        render(json: { message: "Workouts increased" }, status: :ok) and return
+        render(json: { message: "Workout seconds & calories increased" }, status: :ok) and return
       end
     end
 

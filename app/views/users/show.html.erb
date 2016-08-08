@@ -10,6 +10,7 @@
   </aside>
   workouts: <%= @user.workouts %> 
   workoutseconds: <%= @user.workoutseconds %>
+  calories burned: <%= @user.calories.to_i %>
   <div class="col-md-8">
     <% if @user.videos.any? %>
       <h3>videos (<%= @user.videos.count %>)</h3>
