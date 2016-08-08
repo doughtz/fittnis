@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710201837) do
+ActiveRecord::Schema.define(version: 20160806205829) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160710201837) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.integer  "calories"
+    t.float    "calories"
     t.integer  "workouts"
     t.integer  "workoutseconds"
     t.string   "videolog",          default: "--- []\n"

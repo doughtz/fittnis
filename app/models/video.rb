@@ -25,5 +25,27 @@ class Video < ActiveRecord::Base
     end
     
   end
+  
+  # return today's calories
+  def self.videocalories(timestamp)
+    
+    $videoarray.each do |x|
+      if x.mediakey.to_i == timestamp
+        return x.calories
+      end
+    end
+    
+  end
+  
+  # return video's total workoutseconds
+  def self.videoseconds(timestamp)
+    
+    $videoarray.each do |x|
+      if x.mediakey.to_i == timestamp
+        return x.workoutseconds
+      end
+    end
+    
+  end
     
 end

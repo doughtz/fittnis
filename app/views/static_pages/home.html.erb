@@ -20,19 +20,28 @@ var duration;
             console.log(duration);
             }       
     );
+
 </script>
 
 <script>
-var theInterval = setInterval(alertFunc, 1000);
+var plays = 0
+jwplayer().onPlay(function () {
+    plays++
+    if(plays == 1) {
+    setInterval(alertFunc, 1000);
+    }
+});
 var timeWatched = 0;
 function alertFunc() {
     if(jwplayer().getState() == "playing" && timeWatched < duration){
-        timeWatched++
-        $.ajax("/users/increase_workoutseconds")
-    } else if (timeWatched >= duration){
+        timeWatched++;
+        $.ajax("/users/increase_workoutseconds");
+    } else if (timeWatched >= duration) {
         clearInterval(theInterval);
+        timeWatched = 0
     }    
     else {
+        console.log("error in alertFunc!")
     }    
 }
 </script>

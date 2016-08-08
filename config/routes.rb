@@ -28,12 +28,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :users do
-  get :increase_workouts, on: :collection
-  end
-  resources :users do
-  get :increase_workoutseconds, on: :collection
-  end
+  get '/users/increase_workoutseconds', to: 'users#increase_workoutseconds'
+  get '/users/increase_workouts', to: 'users#increase_workouts'
+  resources :users
   resources :videos
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
