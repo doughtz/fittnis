@@ -59,14 +59,9 @@ class UsersController < ApplicationController
       @vidcalories = Video.videocalories(Time.now.strftime("%Y%m%d").to_i)
       @vidseconds = Video.videoseconds(Time.now.strftime("%Y%m%d").to_i)
       @user = current_user
+      add_workoutsec
       if logged_in?
-        if @user.workoutseconds == nil
-          @user.workoutseconds = 0
-        end
-        if @user.calories == nil
-          @user.calories = 0
-        end
-        @user.workoutseconds += 1
+        correct_calories_nil
         @user.calories += @vidcalories.to_f/@vidseconds
         @user.save
         render(json: { message: "Workout seconds & calories increased" }, status: :ok) and return
