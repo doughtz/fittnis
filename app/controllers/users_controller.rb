@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
+  include UsersHelper
   
   def index
     @users = User.paginate(page: params[:page])
@@ -50,16 +51,7 @@ class UsersController < ApplicationController
     # Increases User's workouts after video is watched
     def increase_workouts
       @user = current_user
-      if logged_in?
-        if @user.workouts == nil
-          @user.workouts = 0
-        end
-        @user.workouts += 1
-        @user.save
-        render(json: { message: "Workouts increased" }, status: :ok) and return
-      else 
-        render(json: { message: "Workouts increased" }, status: :ok) and return
-      end
+      update_workouts_and_new_workoutpoint
     end
     
     # Increases User's workout seconds & calories while video is watched
