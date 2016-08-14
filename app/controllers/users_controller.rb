@@ -56,16 +56,10 @@ class UsersController < ApplicationController
     
     # Increases User's workout seconds & calories while video is watched
     def increase_workoutseconds
-      @vidcalories = Video.videocalories(Time.now.strftime("%Y%m%d").to_i)
-      @vidseconds = Video.videoseconds(Time.now.strftime("%Y%m%d").to_i)
       @user = current_user
       add_workoutsec
-      if logged_in?
-        correct_calories_nil
-        @user.calories += @vidcalories.to_f/@vidseconds
-        @user.save
-        render(json: { message: "Workout seconds & calories increased" }, status: :ok) and return
-      end
+      add_calspersec
+      render(json: { message: "Workout seconds & calories increased" }, status: :ok) and return
     end
 
   private

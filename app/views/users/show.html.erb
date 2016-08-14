@@ -1,16 +1,135 @@
 <% provide(:title, @user.name) %>
+<div style="background:#f5f5f5 !important" class="center">
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
+<!--       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      -->
     </section>
   </aside>
-  workouts: <%= @user.workouts %> 
-  workoutseconds: <%= @user.workoutseconds %>
-  calories burned: <%= @user.calories.to_i %>
+  <p></p>
+  <h2>Workout Dashboard</h2>
+  <div class="datatimeperiod">
+    <div class="datacontainertitle">Overall</div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("workout_icon.png", size: "75x75") %>
+      </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("stopwatch_icon.png", size: "75x75") %>
+    </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("calories_icon.png", size: "75x75") %>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.workouts %> </div>
+    <div class="workoutcat">Workouts</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.overall_workoutseconds %></div>
+    <div class="workoutcat">Duration</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.calories.to_i %></div>
+    <div class="workoutcat">Calories burned</div>
+    </div>
+    </div>
+    </div>
+    <p></p>
+    <div class="datatimeperiod">
+    <div class="datacontainertitle">Today</div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("workout_icon.png", size: "125x125") %>
+      </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("stopwatch_icon.png", size: "125x125") %>
+    </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("calories_icon.png", size: "125x125") %>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.today_workoutpoints %> </div>
+    <div class="workoutcat">Workouts</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.today_workoutsecs %></div>
+    <div class="workoutcat">Duration</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.today_calspersec %></div>
+    <div class="workoutcat">Calories burned</div>
+    </div>
+    </div>
+    </div>
+    <p></p>
+    <div class="datatimeperiod">
+    <div class="datacontainertitle">Yesterday</div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("workout_icon.png", size: "125x125") %>
+      </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("stopwatch_icon.png", size: "125x125") %>
+    </div>
+    <div class="workoutdatacontainer">
+      <%= image_tag("calories_icon.png", size: "125x125") %>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.yesterday_workoutpoints %> </div>
+    <div class="workoutcat">Workouts</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.yesterday_workoutsecs %></div>
+    <div class="workoutcat">Duration</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer">
+    <div class="workoutstat">
+    <div class="workoutdata"><%= @user.yesterday_calspersec %></div>
+    <div class="workoutcat">Calories burned</div>
+    </div>
+    </div>
+    </div>
+    <!-- BELOW HERE IS EDITING MODE -->
+    <!-- BELOW HERE IS RAW DATA -->
+  <h2>This Week</h2>
+  <p>Workouts points this week: <%= @user.workouts_for_this_week %> 
+  Calories for this week: <%= @user.calories_for_this_week %>
+   Workout Seconds for this week: <%= @user.workoutseconds_for_this_week %>
+  </p>
+  <h2>Last Week</h2>
+  <p>
+  Workouts points last week: <%= @user.workouts_for_last_week %>
+  Workout calories last week: <%= @user.calories_for_last_week %>
+  Workouts seconds last week: <%= @user.workoutseconds_for_last_week %>
+  </p>
+  <h2>This Month</h2>
+  <p>
+    Workouts this month: <%= @user.current_month_workoutpoints %>
+    Calories this month: <%= @user.current_month_calspersec %>
+    Workout Seconds this month: <%= @user.current_month_workoutsecs %>
+  </p>
+  <h2>Last Month</h2>
+  <p>
+    Workouts last month: <%= @user.last_month_workoutpoints %>
+    Calories last month: <%= @user.last_month_calspersec %>
+    Workout Seconds last month: <%= @user.last_month_workoutsecs %>
+  </p>
+  </center>
   <div class="col-md-8">
     <% if @user.videos.any? %>
       <h3>videos (<%= @user.videos.count %>)</h3>
