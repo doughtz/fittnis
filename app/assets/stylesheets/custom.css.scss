@@ -137,6 +137,7 @@ h2 {
   color: $gray-light;
 }
 
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -316,4 +317,46 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/* Dashboard */
+
+.datatimeperiod {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  float:center;
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+.datacontainertitle {
+  font-size: 2em;
+  text-align: left;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.timeperiodcontainer {
+  width:100%;
+  float:left;
+}
+.workoutcat {
+  color: $gray-light;
+  width: 150px;
+
+}
+
+.workoutdata {
+  color: $gray-light;
+  width: 150px;
+  font-size: 2.5em;
+
+}
+
+.workoutdatacontainer {
+  width: 33%;
+  float: left;
+  display: flex;
+  justify-content: center; /* align horizontal */
 }

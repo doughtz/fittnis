@@ -8,6 +8,17 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
   
+  
+  #
+  ##
+  ###
+  ####   CREATE OBJECTS TO TRACK
+  ####    CALORIES, # OF WORKOUTS,
+  ####     & WORKOUT SECONDS
+  ###
+  ##
+  #
+  
   # correct nil calories if present
   def correct_calories_nil
     if @user.calories == nil
@@ -52,6 +63,17 @@ module UsersHelper
       @workoutsec.save
       else 
         render(json: { message: "Workouts increased" }, status: :ok) and return
+    end
+  end
+  
+  # creates new Calspersecond object to current_user
+  def add_calspersec
+    @vidcalories = Video.videocalories(Time.now.strftime("%Y%m%d").to_i)
+    @vidseconds = Video.videoseconds(Time.now.strftime("%Y%m%d").to_i)
+    if logged_in?
+      correct_calories_nil
+      @calspersec = @user.calspersecs.build(calories_persec: @vidcalories.to_f/@vidseconds)
+      @calspersec.save
     end
   end
   
