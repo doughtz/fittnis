@@ -105,6 +105,15 @@ class User < ActiveRecord::Base
     return workout_time_formatting(self.workoutsecs.all.count)
   end
   
+  # returns total workout calories
+  def overall_calspersec
+    total = 0
+    self.calspersecs.all.each do |x|
+      total += x.calories_persec
+    end
+    return total
+  end
+  
   ###### THIS MONTH
   ###### THIS MONTH
   
