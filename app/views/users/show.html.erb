@@ -12,6 +12,7 @@
   </aside>
   <p></p>
   <h2>Workout Dashboard</h2>
+  <div class="bigcontainer">
   <div class="datatimeperiod">
     <div class="datacontainertitle">Overall</div>
     <div class="workoutdatacontainer">
@@ -37,99 +38,210 @@
     </div>
     <div class="workoutdatacontainer">
     <div class="workoutstat">
-    <div class="workoutdata"><%= @user.calories.to_i %></div>
+    <div class="workoutdata"><%= number_with_delimiter(@user.overall_calspersec.to_i, :delimiter => ',') %></div>
     <div class="workoutcat">Calories burned</div>
     </div>
     </div>
     </div>
     <p></p>
-    <div class="datatimeperiod">
-    <div class="datacontainertitle">Today</div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("workout_icon.png", size: "125x125") %>
+    
+    <!-- BEGIN TODAY BLOCK -->
+    
+    <div class="datatimeperiod2">
+    <div class="datacontainertitle2">Today</div>
+    <div class="workoutdatacontainer2">
+      Workouts
       </div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("stopwatch_icon.png", size: "125x125") %>
+    <div class="workoutcat2">
+      <%= @user.today_workoutpoints %>
     </div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("calories_icon.png", size: "125x125") %>
+    <div class="workoutdatacontainer2">
+      Duration
     </div>
-    <div class="workoutdatacontainer">
-    <div class="workoutstat">
-    <div class="workoutdata"><%= @user.today_workoutpoints %> </div>
-    <div class="workoutcat">Workouts</div>
+    <div class="workoutcat2"><%= @user.today_workoutsecs%></div>
+    <div class="workoutdatacontainer2">
+      Calories
     </div>
+    <div class="workoutcat2"><%= @user.today_calspersec %></div>
     </div>
-    <div class="workoutdatacontainer">
-    <div class="workoutstat">
-    <div class="workoutdata"><%= @user.today_workoutsecs %></div>
-    <div class="workoutcat">Duration</div>
-    </div>
-    </div>
-    <div class="workoutdatacontainer">
-    <div class="workoutstat">
-    <div class="workoutdata"><%= @user.today_calspersec %></div>
-    <div class="workoutcat">Calories burned</div>
-    </div>
-    </div>
-    </div>
-    <p></p>
-    <div class="datatimeperiod">
-    <div class="datacontainertitle">Yesterday</div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("workout_icon.png", size: "125x125") %>
+    <!-- END OF TODAY BLOCK -->
+    
+    <!-- BEGIN YESTERDAY BLOCK -->
+    
+    <div class="datatimeperiod2">
+    <div class="datacontainertitle2">Yesterday</div>
+    <div class="workoutdatacontainer2">
+      Workouts
       </div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("stopwatch_icon.png", size: "125x125") %>
+    <div class="workoutdatacontainer2">
+      <%= @user.yesterday_workoutpoints %>
     </div>
-    <div class="workoutdatacontainer">
-      <%= image_tag("calories_icon.png", size: "125x125") %>
+    <div class="workoutdatacontainer2">
+      Duration
     </div>
-    <div class="workoutdatacontainer">
+    <div class="workoutdatacontainer2">
     <div class="workoutstat">
-    <div class="workoutdata"><%= @user.yesterday_workoutpoints %> </div>
-    <div class="workoutcat">Workouts</div>
+    <div class="workoutdata2"> </div>
+    <div class="workoutcat"><%= @user.yesterday_workoutsecs%></div>
     </div>
     </div>
-    <div class="workoutdatacontainer">
+    <div class="workoutdatacontainer2">
     <div class="workoutstat">
-    <div class="workoutdata"><%= @user.yesterday_workoutsecs %></div>
-    <div class="workoutcat">Duration</div>
+    <div class="workoutdata2"></div>
+    <div class="workoutcat">Calories</div>
     </div>
     </div>
-    <div class="workoutdatacontainer">
+    <div class="workoutdatacontainer2">
     <div class="workoutstat">
-    <div class="workoutdata"><%= @user.yesterday_calspersec %></div>
-    <div class="workoutcat">Calories burned</div>
+    <div class="workoutdata2"></div>
+    <div class="workoutcat"><%= @user.yesterday_calspersec %></div>
     </div>
     </div>
     </div>
-    <!-- BELOW HERE IS EDITING MODE -->
-    <!-- BELOW HERE IS RAW DATA -->
-  <h2>This Week</h2>
-  <p>Workouts points this week: <%= @user.workouts_for_this_week %> 
-  Calories for this week: <%= @user.calories_for_this_week %>
-   Workout Seconds for this week: <%= @user.workoutseconds_for_this_week %>
-  </p>
-  <h2>Last Week</h2>
-  <p>
-  Workouts points last week: <%= @user.workouts_for_last_week %>
-  Workout calories last week: <%= @user.calories_for_last_week %>
-  Workouts seconds last week: <%= @user.workoutseconds_for_last_week %>
-  </p>
-  <h2>This Month</h2>
-  <p>
-    Workouts this month: <%= @user.current_month_workoutpoints %>
-    Calories this month: <%= @user.current_month_calspersec %>
-    Workout Seconds this month: <%= @user.current_month_workoutsecs %>
-  </p>
-  <h2>Last Month</h2>
-  <p>
-    Workouts last month: <%= @user.last_month_workoutpoints %>
-    Calories last month: <%= @user.last_month_calspersec %>
-    Workout Seconds last month: <%= @user.last_month_workoutsecs %>
-  </p>
-  </center>
+    
+    <!-- END YESTERDAY BLOCK -->
+    
+    <!-- BEGIN THIS WEEK BLOCK -->
+    
+    <div class="datatimeperiod6">
+    <div class="datacontainertitle2">This Week</div>
+    <div class="workoutdatacontainer2">
+      Workouts
+      </div>
+    <div class="workoutdatacontainer2">
+      <%= @user.workouts_for_this_week %>
+    </div>
+    <div class="workoutdatacontainer2">
+      Duration
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"> </div>
+    <div class="workoutcat"><%= @user.workoutseconds_for_this_week %></div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat">Calories</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat"><%= @user.calories_for_this_week %></div>
+    </div>
+    </div>
+    </div>
+    
+    <!-- END THIS WEEK BLOCK -->
+    
+    <!-- BEGIN LAST WEEK BLOCK -->
+    
+    <div class="datatimeperiod7">
+    <div class="datacontainertitle2">Last Week</div>
+    <div class="workoutdatacontainer2">
+      Workouts
+      </div>
+    <div class="workoutdatacontainer2">
+      <%= @user.workouts_for_last_week %>
+    </div>
+    <div class="workoutdatacontainer2">
+      Duration
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"> </div>
+    <div class="workoutcat"><%= @user.workoutseconds_for_last_week %></div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat">Calories</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat"><%= @user.calories_for_last_week %></div>
+    </div>
+    </div>
+    </div>
+    
+    <!-- END LAST WEEK BLOCK -->
+    
+    <!-- BEING THIS MONTH BLOCK -->
+    
+    <div class="datatimeperiod4">
+    <div class="datacontainertitle2">This Month</div>
+    <div class="workoutdatacontainer2">
+      Workouts
+      </div>
+    <div class="workoutdatacontainer2">
+      <%= @user.current_month_workoutpoints %>
+    </div>
+    <div class="workoutdatacontainer2">
+      Duration
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"> </div>
+    <div class="workoutcat"><%= @user.current_month_workoutsecs %></div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat">Calories</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat"><%= @user.current_month_calspersec %></div>
+    </div>
+    </div>
+    </div>
+    
+    <!-- END THIS MONTH BLOCK -->
+    <div class="onepctspacer"></div>
+    <!-- BEING LAST MONTH BLOCK -->
+    
+    <div class="datatimeperiod5">
+    <div class="datacontainertitle2">Last Month</div>
+    <div class="workoutdatacontainer2">
+      Workouts
+      </div>
+    <div class="workoutdatacontainer2">
+      <%= @user.last_month_workoutpoints %>
+    </div>
+    <div class="workoutdatacontainer2">
+      Duration
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"> </div>
+    <div class="workoutcat"><%= @user.last_month_workoutsecs %></div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat">Calories</div>
+    </div>
+    </div>
+    <div class="workoutdatacontainer2">
+    <div class="workoutstat">
+    <div class="workoutdata2"></div>
+    <div class="workoutcat"><%= @user.last_month_calspersec %></div>
+    </div>
+    </div>
+    </div>
+    
+   <!-- END LAST MONTH BLOCK -->
+    
+
   <div class="col-md-8">
     <% if @user.videos.any? %>
       <h3>videos (<%= @user.videos.count %>)</h3>

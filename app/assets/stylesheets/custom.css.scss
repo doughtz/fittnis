@@ -321,20 +321,100 @@ span.picture {
 
 /* Dashboard */
 
+.bigcontainer {
+  width: 1000px;
+  overflow: hidden;
+  float: center;
+  margin: 0 auto;
+}
+
 .datatimeperiod {
   width: 1000px;
   margin: 0 auto;
-  overflow: hidden;
   float:center;
   background-color: white;
   padding-bottom: 30px;
+  height: 170px;
+  border: 1px solid rgba(black, .2);
+}
+
+.datatimeperiod2 {
+  width: 24%;
+  margin-right: 10px;
+  overflow: hidden;
+  float:left;
+  background-color: white;
+  padding-bottom: 30px;
+  height: 150px;
+}
+
+.datatimeperiod3 {
+  width: 24%;
+  overflow: hidden;
+  float:left;
+  background-color: white;
+  padding-bottom: 30px;
+  height: 150px;
+}
+
+.datatimeperiod4 {
+  width: 49%;
+  overflow: hidden;
+  float:left;
+  background-color: white;
+  padding-bottom: 30px;
+  height: 150px;
+  margin-top: 10px;
+}
+
+.datatimeperiod5 {
+  width: 49%;
+  overflow: hidden;
+  float:left;
+  background-color: white;
+  padding-bottom: 30px;
+  height: 150px;
+  margin-top: 10px;
+}
+
+.datatimeperiod6 {
+  width: 24%;
+  overflow: hidden;
+  float:right;
+  background-color: white;
+  padding-bottom: 10px;
+  height: 150px;
+}
+
+.datatimeperiod7 {
+  width: 24%;
+  margin-right: 10px;
+  overflow: hidden;
+  float:right;
+  background-color: white;
+  padding-bottom: 10px;
+  height: 150px;
 }
 
 .datacontainertitle {
   font-size: 2em;
   text-align: left;
-  padding-left: 10px;
   padding-bottom: 10px;
+  float: left;
+  height: 170px;
+  line-height: 170px;
+  width: 20%;
+  text-align: center;
+}
+
+.datacontainertitle2 {
+  font-size: 1.2em;
+  color: black;
+  text-align: left;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  float: left;
+  width: 99%;
 }
 
 .timeperiodcontainer {
@@ -347,6 +427,18 @@ span.picture {
 
 }
 
+.workoutcat2 {
+  color: $gray;
+  font-weight: bold;
+  float: left;
+  width: 50%;
+  font-size: 1.5em;
+  height: 38px;
+  line-height: 38px;
+  text-align: right;
+  padding-right: 10px;
+}
+
 .workoutdata {
   color: $gray-light;
   width: 150px;
@@ -354,9 +446,34 @@ span.picture {
 
 }
 
+.workoutdata2 {
+  color: $gray-light;
+  width: 20px;
+  font-size: 0.7em;
+
+}
+
 .workoutdatacontainer {
-  width: 33%;
+  width: 25%;
   float: left;
   display: flex;
   justify-content: center; /* align horizontal */
+  padding-top: 10px;
+}
+
+.workoutdatacontainer2 {
+  width: 50%;
+  float: left;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  padding-top: 10px;
+  
+}
+
+.onepctspacer {
+  width: 2%;
+  float: left;
+  height: 1px;
+  margin-top: 10px;
+  height: 50px;
 }
