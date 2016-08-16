@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811175855) do
+ActiveRecord::Schema.define(version: 20160815234609) do
 
   create_table "calspersecs", force: :cascade do |t|
     t.float    "calories_persec"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160811175855) do
     t.integer  "workouts"
     t.integer  "workoutseconds"
     t.string   "videolog",          default: "--- []\n"
+    t.string   "time_zone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
