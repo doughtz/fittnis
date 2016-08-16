@@ -68,9 +68,9 @@ module UsersHelper
   
   # creates new Calspersecond object to current_user
   def add_calspersec
-    @vidcalories = Video.videocalories(Time.now.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
-    @vidseconds = Video.videoseconds(Time.now.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
     if logged_in?
+      @vidcalories = Video.videocalories(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i)
+      @vidseconds = Video.videoseconds(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i)
       correct_calories_nil
       @calspersec = @user.calspersecs.build(calories_persec: @vidcalories.to_f/@vidseconds)
       @calspersec.save
