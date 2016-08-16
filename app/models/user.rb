@@ -121,7 +121,7 @@ class User < ActiveRecord::Base
   def current_month_workoutpoints
     total = 0
     self.workoutpoints.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == Time.now.strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m").to_i
         total += 1
       end
     end
@@ -132,7 +132,7 @@ class User < ActiveRecord::Base
   def current_month_calspersec
     total = 0.0
     self.calspersecs.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == Time.now.strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m").to_i
         total += x.calories_persec
       end
     end
@@ -143,7 +143,7 @@ class User < ActiveRecord::Base
   def current_month_workoutsecs
     seconds = 0
     self.workoutsecs.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == Time.now.strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m").to_i
         seconds += 1
       end
     end
@@ -157,7 +157,7 @@ class User < ActiveRecord::Base
   def last_month_workoutpoints
     total = 0
     self.workoutpoints.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == (Time.now - 1.month).strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == (Time.now.in_time_zone(self.time_zone) - 1.month).strftime("%Y%m").to_i
         total += 1
       end
     end
@@ -168,7 +168,7 @@ class User < ActiveRecord::Base
   def last_month_calspersec
     total = 0.0
     self.calspersecs.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == (Time.now - 1.month).strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == (Time.now.in_time_zone(self.time_zone) - 1.month).strftime("%Y%m").to_i
         total += x.calories_persec
       end
     end
@@ -179,7 +179,7 @@ class User < ActiveRecord::Base
   def last_month_workoutsecs
     seconds = 0
     self.workoutsecs.each do |x|
-      if x.created_at.strftime("%Y%m").to_i == (Time.now - 1.month).strftime("%Y%m").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m").to_i == (Time.now.in_time_zone(self.time_zone) - 1.month).strftime("%Y%m").to_i
         seconds += 1
       end
     end
@@ -193,8 +193,8 @@ class User < ActiveRecord::Base
   # returns # of workouts for this week
   def workouts_for_this_week
     total_week_workoutpoints = 0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = todays_day_number*-1
     this_week = Hash.new
@@ -209,7 +209,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.workoutpoints.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_workoutpoints += 1
       end
     end
@@ -219,8 +219,8 @@ class User < ActiveRecord::Base
   # returns workout calories for this week
   def calories_for_this_week
     total_week_calories = 0.0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = todays_day_number*-1
     this_week = Hash.new
@@ -235,7 +235,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.calspersecs.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_calories += x.calories_persec
       end
     end
@@ -245,8 +245,8 @@ class User < ActiveRecord::Base
   # returns workoutseconds for this week
   def workoutseconds_for_this_week
     total_week_workoutseconds = 0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = todays_day_number*-1
     this_week = Hash.new
@@ -261,7 +261,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.calspersecs.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_workoutseconds += 1
       end
     end
@@ -274,8 +274,8 @@ class User < ActiveRecord::Base
   # returns workout points for LAST week
   def workouts_for_last_week
     total_week_workoutpoints = 0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = (todays_day_number*-1) - 7
     last_week = Hash.new
@@ -290,7 +290,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.workoutpoints.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_workoutpoints += 1
       end
     end
@@ -300,8 +300,8 @@ class User < ActiveRecord::Base
   # returns workout calories for last week
   def calories_for_last_week
     total_week_calories = 0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = (todays_day_number*-1) - 7
     last_week = Hash.new
@@ -316,7 +316,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.calspersecs.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_calories += x.calories_persec
       end
     end
@@ -326,8 +326,8 @@ class User < ActiveRecord::Base
   # returns workout seconds for LAST week
   def workoutseconds_for_last_week
     total_week_workoutseconds = 0
-    today_date = Time.now
-    todays_day_number = Time.now.strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
+    today_date = Time.now.in_time_zone(self.time_zone)
+    todays_day_number = Time.now.in_time_zone(self.time_zone).strftime("%w").to_i # ---> 0 is Sunday, 1 is Monday, etc.
     days_of_week = {sunday: today_date, monday: today_date, tuesday: today_date, wednesday: today_date, thursday: today_date, friday: today_date, saturday: today_date}
     increment = (todays_day_number*-1) - 7
     last_week = Hash.new
@@ -342,7 +342,7 @@ class User < ActiveRecord::Base
       week_dates_in_numbers << x.strftime("%Y%m%d").to_i
     end
     self.workoutsecs.each do |x|
-      if week_dates_in_numbers.include?(x.created_at.strftime("%Y%m%d").to_i)
+      if week_dates_in_numbers.include?(x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i)
         total_week_workoutseconds += 1
       end
     end
@@ -356,7 +356,7 @@ class User < ActiveRecord::Base
   def today_workoutpoints
     total = 0
     self.workoutpoints.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == Time.now.strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i
         total += 1
       end
     end
@@ -367,7 +367,7 @@ class User < ActiveRecord::Base
   def today_calspersec
     total = 0.0
     self.calspersecs.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == Time.now.strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i
         total += x.calories_persec
       end
     end
@@ -378,7 +378,7 @@ class User < ActiveRecord::Base
   def today_workoutsecs
     seconds = 0
     self.workoutsecs.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == Time.now.strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == Time.now.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i
         seconds += 1
       end
     end
@@ -389,7 +389,7 @@ class User < ActiveRecord::Base
   def yesterday_workoutpoints
     total = 0
     self.workoutpoints.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == (Time.now-1.day).strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == (Time.now.in_time_zone(self.time_zone)-1.day).strftime("%Y%m%d").to_i
         total += 1
       end
     end
@@ -400,7 +400,7 @@ class User < ActiveRecord::Base
   def yesterday_calspersec
     total = 0.0
     self.calspersecs.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == (Time.now-1.day).strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == (Time.now.in_time_zone(self.time_zone)-1.day).strftime("%Y%m%d").to_i
         total += x.calories_persec
       end
     end
@@ -411,7 +411,7 @@ class User < ActiveRecord::Base
   def yesterday_workoutsecs
     seconds = 0
     self.workoutsecs.each do |x|
-      if x.created_at.strftime("%Y%m%d").to_i == (Time.now-1.day).strftime("%Y%m%d").to_i
+      if x.created_at.in_time_zone(self.time_zone).strftime("%Y%m%d").to_i == (Time.now.in_time_zone(self.time_zone)-1.day).strftime("%Y%m%d").to_i
         seconds += 1
       end
     end

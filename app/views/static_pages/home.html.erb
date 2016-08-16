@@ -1,9 +1,9 @@
 <!-- <div class="searchbar">Search</div> -->
 <div style="background:#f5f5f5 !important" class="center jumbotron">
-  <h1>Today's Workout - <%= Time.now.strftime("%m/%d") %></h1>
+  <h1>Today's Workout - <%= logged_in? ? Time.now.in_time_zone(current_user.time_zone).strftime("%m/%d") : Time.now.strftime("%m/%d") %></h1>
   <h2>Create an account to log your workouts, calories, etc.</h2>
 
-<center><script src="//content.jwplatform.com/players/<%= Video.mediakey(Time.now.strftime("%Y%m%d").to_i) %>-3sPMNLmx.js"></script>
+<center><script src="//content.jwplatform.com/players/<%= logged_in? ? Video.mediakey(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i) : Video.mediakey(Time.now.strftime("%Y%m%d").to_i) %>-3sPMNLmx.js"></script>
 
 <script>
 var duration = 0;
