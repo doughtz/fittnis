@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
+  get 'auth/:provider/callback', to: 'sessions#auth_create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  
   get '/users/increase_workoutseconds', to: 'users#increase_workoutseconds'
   get '/users/increase_workouts', to: 'users#increase_workouts'
   resources :users

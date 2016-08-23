@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815234609) do
+ActiveRecord::Schema.define(version: 20160817181430) do
 
   create_table "calspersecs", force: :cascade do |t|
     t.float    "calories_persec"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20160815234609) do
     t.integer  "workoutseconds"
     t.string   "videolog",          default: "--- []\n"
     t.string   "time_zone"
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

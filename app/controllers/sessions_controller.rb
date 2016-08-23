@@ -21,6 +21,15 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+  
+  ### begin google auth added
+  def auth_create
+    user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    flash[:warning] = "You have been logged in."
+    redirect_to root_path
+  end
+  ### end google auth added
 
   def destroy
     log_out if logged_in?
