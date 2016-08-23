@@ -22,6 +22,21 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
   
+  # Takes Google data and persist it to the database // If no User, create. Otherwise, existing user updated.
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.password = user.password_confirmation = SecureRandom.urlsafe_base64(n=6)
+      user.username = Faker::Lorem.characters(char_count = 15)
+      user.email = Faker::Internet.email
+      user.save!
+    end
+  end
+  
   # Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64
