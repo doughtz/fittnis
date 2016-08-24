@@ -52,7 +52,12 @@ end
 
 # Confirms an admin user.
     def admin_user
+      if logged_in?
       redirect_to(root_url) unless current_user.admin?
+      else
+        flash[:danger] = "You reached an invalid url and have been redirected to the home page."
+      redirect_to(root_url)
+      end
     end
     
     
