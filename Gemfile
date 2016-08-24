@@ -12,7 +12,7 @@ gem 'jquery-rails', '4.0.3'
 gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
-## gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap-sass',       '3.2.0.0'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-facebook', '~> 1.4.1'
 
