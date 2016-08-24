@@ -1,8 +1,14 @@
 <% provide(:title, "Login") %>
 <h1>Log In</h1>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-3 col-md-offset-3", style="height: 238px; border-right: 1px solid gray; text-align: right">
+    <!-- Social Sign In START -->
+    <span class="helper"><%= link_to image_tag('sign_in_google', size: "222x49"), "/auth/google_oauth2", id: "sign_in" %>
+    <%= link_to image_tag('sign_in_facebook', size: "222x49"), "/auth/facebook", id: "sign_in" %></span>
+    <!-- Social Sign In END -->
+  </div>
+  <div class="col-md-3", style="border-left: 1px solid gray; overflow: hidden">
+    <div class="helper2">
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
@@ -21,8 +27,9 @@
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-    <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-    <p></p>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </div>
+
+    
   </div>
 </div>
+
