@@ -16,7 +16,7 @@
     <% if current_page?(root_path) %>
     <%= render 'layouts/header' %>
 <% else %>
-    <%= render 'layouts/shrink_header' %>
+    <%= render 'layouts/header' %>
 <% end %>
     <div class="container-fluid">
       <% flash.each do |message_type, message| %>
