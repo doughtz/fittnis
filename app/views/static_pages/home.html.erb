@@ -1,12 +1,23 @@
-<!-- <div class="searchbar">Search</div> -->
 <div class="body-div">
-  <div class="videodiv"><script src="//content.jwplatform.com/players/<%= logged_in? ? Video.mediakey(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i) : Video.mediakey(Time.now.strftime("%Y%m%d").to_i) %>-oEEyLY9V.js"></script></div>
-  <div class="video-details">
-      Today's Workout - <%= logged_in? ? Time.now.in_time_zone(current_user.time_zone).strftime("%m/%d") : Time.now.strftime("%m/%d") %>
-      <p></p>
-      Create an account to log your workouts, calories, etc.
+  <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= logged_in? ? Video.mediakey(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i) : Video.mediakey(Time.now.strftime("%Y%m%d").to_i) %>-oEEyLY9V.js"></script></div>
+  <div class="vidstats">
+    <div class="vidTitle center">Workout Stats</div>
+      <div class="workoutStat-top-left">234</div>
+      <div class="workoutStat-top-right">20 minutes</div>
+      <div class="workoutStat-left">Calories</div>
+      <div class="workoutStat-right">Length</div></div>
+      <div class="commentbox"><center>Comments</center></div>
+      <div class="video-details">
+    <div class="vidTitle">
+      Today's Workout - <%= logged_in? ? Time.now.in_time_zone(current_user.time_zone).strftime("%m/%d") : Time.now.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d") %>
+    </div>  
+    <div class="quote">
+      Its <%= Time.now.strftime("%A") %>, give it all you got!
+    </div>
+      
   </div>
-
+  
+  
 <!-- BEGIN javascript scripts for updating user model data -->
 <script>
 var duration = 0;
