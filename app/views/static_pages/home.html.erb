@@ -2,9 +2,8 @@
   <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile %>-oEEyLY9V.js"></script></div>
   <div class="video-details">
     <div class="comments">
-    <% if current_video.microposts.any? %>
       <h3>Comments (<%= current_video.microposts.count %>)</h3>
-       <% end %>
+      <% if current_video.microposts.any? %> <!-- if microposts.any? -->
       <div class="microposts" id="reload">
 
         <%= render @microposts %>
@@ -24,6 +23,24 @@
         <p></p>
         <% end %>
       </div>
+      <% end %> <!-- if microposts.any? -->
+      <% unless current_video.microposts.any? %> <!-- unless microposts.any? -->
+        <div class="microposts2" id="reload2">
+      <!-- show micropost form to submit post -->
+        <% if logged_in? %>
+        <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+        </section>
+       
+      </div>
+    <% end %>
+    <div class="microposts3">
+      <% unless logged_in? %>
+        <%= link_to "Login", login_url %> or <%= link_to "Signup", signup_url %> to post a comment.
+        <p></p>
+        <% end %>
+      </div>
+      <% end %> <!-- unless microposts.any? -->
     </div>
           
       </div>
