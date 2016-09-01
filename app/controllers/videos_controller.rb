@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :admin_user,   only: [:new, :create]
+  include VideosHelper
     
   def new
     @video = Video.new

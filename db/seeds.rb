@@ -6,24 +6,6 @@ User.create!(name:  "Dan Doughty",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
-
-=begin             
-Video.create!(
-  title: "7/5/2016 20-Minute Workout",
-  description: "Cardio workout for 20 minutes.",
-  tags: "cardio",
-  equipment: "dumbbells",
-  videofile: "picture url",
-  categor: "Cardio",
-  length: 20*60,
-  rating: 3,
-  calories: 105,
-  workouts: 1,
-  workoutseconds: 1200,
-  videolog: [],
-  mediakey: "kDeYpg0U" )           
-
-=end           
              
 users = User.order(:created_at).take(6)
 a = Time.now.strftime("%Y%m%d").to_i - 1
@@ -58,4 +40,11 @@ d = 0
                                           tags: tags, equipment: equipment, videofile: videofile,
                                           categor: categor, length: length, rating: rating, calories: calories, workouts: workouts, workoutseconds: workoutseconds,
                                           videolog: videolog, mediakey: mediakey) }
+                                          
+end
+
+videos = Video.order(:created_at).take(50)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  videos.each { |video| video.microposts.create!(content: content, user: User.find(1)) }
 end

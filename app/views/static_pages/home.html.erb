@@ -1,24 +1,47 @@
 <div class="body-div">
-  <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= logged_in? ? Video.mediakey(Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i) : Video.mediakey(Time.now.strftime("%Y%m%d").to_i) %>-oEEyLY9V.js"></script></div>
-  <div class="vidstats">
-    <div class="vidTitle center">Workout Stats</div>
-      <div class="workoutStat-top-left">234</div>
-      <div class="workoutStat-top-right">20 minutes</div>
-      <div class="workoutStat-left">Calories</div>
-      <div class="workoutStat-right">Length</div></div>
-      <div class="commentbox"><center>Comments</center></div>
-      <div class="video-details">
-    <div class="vidTitle">
+  <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile %>-oEEyLY9V.js"></script></div>
+  <div class="video-details">
+    <div class="comments">
+    <% if current_video.microposts.any? %>
+      <h3>Comments (<%= current_video.microposts.count %>)</h3>
+      <div class="microposts" id="reload">
+
+        <%= render @microposts %>
+        </div>
+        <div class="microposts2" id="reload2">
+      <!-- show micropost form to submit post -->
+        <% if logged_in? %>
+        <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+        </section>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="microposts3">
+      <% unless logged_in? %>
+        <%= link_to "Login", login_url %> or <%= link_to "Signup", signup_url %> to post a comment.
+        <p></p>
+        <% end %>
+      </div>
+    </div>
+          
+      </div>
+      <div class="commentbox" style="height: 130px">
+        <div class="vidTitle">
       Today's Workout - <%= logged_in? ? Time.now.in_time_zone(current_user.time_zone).strftime("%m/%d") : Time.now.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d") %>
-    </div>  
+    </div>
+      
     <div class="quote">
-      Its <%= Time.now.strftime("%A") %>, give it all you got!
+      It's <%= Time.now.strftime("%A") %>, give it all you got!
     </div>
       
   </div>
   
   
 <!-- BEGIN javascript scripts for updating user model data -->
+<script>
+  $('#reload').scrollTop($('#reload')[0].scrollHeight);
+</script>
 <script>
 var duration = 0;
 var duration;  
@@ -68,3 +91,4 @@ jwplayer().on('complete', function() {
 <!-- END javascript scripts for updating user model data -->
 
 </div>
+
