@@ -13,4 +13,14 @@ module VideosHelper
     end
   end
   
+  #return today's video
+  def current_video
+    if logged_in? && current_user.time_zone != nil
+      the_video = Video.find_by(mediakey: Time.now.in_time_zone(current_user.time_zone).strftime("%Y%m%d").to_i)
+    else
+      the_video = Video.find_by(mediakey: Time.now.in_time_zone("Pacific Time (US & Canada)").strftime("%Y%m%d").to_i)
+    end
+    @current_video = the_video
+  end
+  
 end

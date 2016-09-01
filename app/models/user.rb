@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :videos
   has_many :workoutpoints
+  has_many :microposts, dependent: :destroy
   has_many :workoutsecs
   has_many :calspersecs
   attr_accessor :remember_token, :activation_token, :reset_token

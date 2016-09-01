@@ -1,0 +1,7 @@
+<%= form_for(@micropost, remote: true, id: 'microform') do |f| %>
+
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Write a comment..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

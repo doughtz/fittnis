@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   before_filter :set_user_time_zone
   
+  # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+  
   private
   
   def set_user_time_zone

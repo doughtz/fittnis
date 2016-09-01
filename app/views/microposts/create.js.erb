@@ -1,0 +1,3 @@
+$("#reload").html("<%= escape_javascript(render current_video.microposts.all) %>");
+$('#micropost_content').val('');
+$('#reload').scrollTop($('#reload')[0].scrollHeight);
