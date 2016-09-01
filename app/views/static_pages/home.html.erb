@@ -1,50 +1,55 @@
 <div class="body-div">
   <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile %>-oEEyLY9V.js"></script></div>
+  
   <div class="video-details">
     <div class="comments">
       <h3>Comments (<%= current_video.microposts.count %>)</h3>
+      
       <% if current_video.microposts.any? %> <!-- if microposts.any? -->
       <div class="microposts" id="reload">
-
         <%= render @microposts %>
-        </div>
-        <div class="microposts2" id="reload2">
+      </div>
+        
+      <div class="microposts2" id="reload2">
       <!-- show micropost form to submit post -->
         <% if logged_in? %>
         <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
         </section>
-       
+        <% end %>
       </div>
-    <% end %>
-    <div class="microposts3">
-      <% unless logged_in? %>
+    
+      <div class="microposts3">
+        <% unless logged_in? %>
         <%= link_to "Login", login_url %> or <%= link_to "Signup", signup_url %> to post a comment.
         <p></p>
         <% end %>
       </div>
       <% end %> <!-- if microposts.any? -->
+      
+      
       <% unless current_video.microposts.any? %> <!-- unless microposts.any? -->
-        <div class="microposts2-nomicroposts" id="reload2">
-          Be the first to comment
+      <div class="microposts2-nomicroposts" id="reload2">
+        Be the first to comment
+        <p></p>
       <!-- show micropost form to submit post -->
         <% if logged_in? %>
         <section class="micropost_form">
         <%= render 'shared/micropost_form' %>
         </section>
-       
-      </div>
-    <% end %>
-    <div class="microposts3">
-      <% unless logged_in? %>
-        <%= link_to "Login", login_url %> or <%= link_to "Signup", signup_url %> to post a comment.
-        <p></p>
         <% end %>
+      </div>
+      
+      <div class="microposts3">
+      <% unless logged_in? %>
+      <%= link_to "Login", login_url %> or <%= link_to "Signup", signup_url %> to post a comment.
+        <p></p>
+      <% end %>
       </div>
       <% end %> <!-- unless microposts.any? -->
     </div>
           
-      </div>
+  </div>
       <div class="commentbox" style="height: 130px">
         <div class="vidTitle">
       Today's Workout - <%= logged_in? ? Time.now.in_time_zone(current_user.time_zone).strftime("%m/%d") : Time.now.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d") %>
