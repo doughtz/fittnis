@@ -17,6 +17,12 @@ class MicropostsController < ApplicationController
   end
 end
   end
+  
+  def refresher
+    @currentvideo = current_video
+    @micropost = current_user.microposts.build(micropost_params)
+    @micropost.video_id = current_video.id
+  end
 
   def destroy
   end
