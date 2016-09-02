@@ -493,6 +493,12 @@ span.picture {
   font-weight: bold;
 }
 
+.micropostContent {
+  width: 100%;
+  border: 1px solid red;
+  word-break:break-all;
+}
+
 .microposts3 {
   list-style: none;
   bottom: 14%;
