@@ -1,1 +1,2 @@
-$("#refresher").html('<%= j render @microposts %>');
+$("#reload").html('<%= j render @microposts %>');
+$('#reload').scrollTop($('#reload')[0].scrollHeight);
