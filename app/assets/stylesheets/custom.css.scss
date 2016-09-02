@@ -383,6 +383,7 @@ padright {
 .microposts {
   list-style: none;
   padding: 0;
+  width: 95%;
   overflow: scroll;
   position: absolute;
   bottom: 125px;
@@ -430,6 +431,7 @@ span.picture {
 }
 .microposts2-nomicroposts {
   list-style: none;
+  bottom: 4%;
   position: absolute;
   width: 90%;
   padding: 0;
