@@ -30,7 +30,9 @@
       
       <% unless current_video.microposts.any? %> <!-- unless microposts.any? -->
       <div class="microposts2-nomicroposts" id="reload2">
+        <% if logged_in? %>
         Be the first to comment
+        <% end %>
         <p></p>
       <!-- show micropost form to submit post -->
         <% if logged_in? %>
