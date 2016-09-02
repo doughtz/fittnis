@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   
   get  'upload' => 'videos#new'
   
+  get 'static_pages/refresher' => 'static_pages#refresher'
+  
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

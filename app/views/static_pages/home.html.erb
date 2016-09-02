@@ -1,7 +1,7 @@
 <div class="body-div">
   <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile %>-oEEyLY9V.js"></script></div>
   
-  <div class="video-details">
+  <div class="video-details" id="right-column-home">
     <div class="comments">
       <h3 style="text-decoration: underline">Comments (<%= current_video.microposts.count %>)</h3>
 
@@ -38,11 +38,27 @@
       
   </div>
   
-  
-<!-- BEGIN javascript scripts for updating user model data -->
+<!-- have comments scrollbox start at bottom -->
 <script>
   $('#reload').scrollTop($('#reload')[0].scrollHeight);
 </script>
+<!-- have comments scrollbox start at bottom -->
+
+<!-- refresh comments every second -->
+<script>
+$(document).ready(function() {
+
+    setInterval(function() {
+        $.ajax({
+            type: "GET",
+            url: "/static_pages/refresher"
+        });
+    }, 5000);
+});
+</script>
+<!-- refresh comments every second -->
+
+<!-- BEGIN javascript scripts for updating user model data -->
 <script>
 var duration = 0;
 var duration;  

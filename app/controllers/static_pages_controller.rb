@@ -15,4 +15,15 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+  
+  def create
+  end
+  
+  def refresher
+    @microposts = current_video.microposts.all
+    
+    respond_to do |format|
+    format.js
+  end
+  end
 end
