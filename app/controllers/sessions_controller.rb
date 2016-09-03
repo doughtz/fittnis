@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     flash[:success] = "You have been logged in."
-    redirect_to root_path
+    redirect_back_or user
   end
   ### end google auth added
 
