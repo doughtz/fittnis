@@ -3,7 +3,7 @@
   
   <div class="video-details" id="right-column-home">
     <div class="comments">
-      <h3 style="text-decoration: underline">Comments (<%= current_video.microposts.count %>)</h3>
+      <h3 style="text-decoration: underline">Comments (<div id="commentCount"><%= current_video.microposts.count %></div>)</h3>
 
       <div class="microposts" id="reload">
         <%= render @microposts %>
@@ -38,13 +38,13 @@
       
   </div>
   
-<!-- have comments scrollbox start at bottom -->
+<!-- have comments scrollbox start at bottom  BEGIN -->
 <script>
   $('#reload').scrollTop($('#reload')[0].scrollHeight);
 </script>
-<!-- have comments scrollbox start at bottom -->
+<!-- have comments scrollbox start at bottom  END -->
 
-<!-- refresh comments every second -->
+<!-- refresh comments every second  BEGIN -->
 <script>
 $(document).ready(function() {
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
     }, 5000);
 });
 </script>
-<!-- refresh comments every second -->
+<!-- refresh comments every second END -->
 
 <!-- BEGIN javascript scripts for updating user model data -->
 <script>

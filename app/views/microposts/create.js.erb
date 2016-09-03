@@ -1,3 +1,4 @@
 $("#reload").html("<%= escape_javascript(render current_video.microposts.all) %>");
+$("#commentCount").html('<%= current_video.microposts.count %>');
 $('#micropost_content').val('');
 $('#reload').scrollTop($('#reload')[0].scrollHeight);

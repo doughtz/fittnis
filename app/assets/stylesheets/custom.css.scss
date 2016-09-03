@@ -495,8 +495,11 @@ span.picture {
 
 .micropostContent {
   width: 100%;
-  border: 1px solid red;
   word-break:break-all;
+}
+
+#commentCount {
+  display: inline;
 }
 
 .microposts3 {
