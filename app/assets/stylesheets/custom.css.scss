@@ -162,6 +162,18 @@ p {
   }
 }
 
+#profile-image:after {
+  content:'\A';
+  background:rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+#profile-image:hover:after {
+  opacity: 1;
+}
+
 .header-menu {
   height: 60px;
   background: white;
