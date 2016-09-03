@@ -34,7 +34,7 @@
     </div>
     <div class="workoutdatacontainer">
     <div class="workoutstat">
-    <div class="workoutdata"><%= @user.workouts %> </div>
+    <div class="workoutdata"><%= @user.workouts == nil ? "0" : @user.workouts %> </div>
     <div class="workoutcat">Workouts</div>
     </div>
     </div>
