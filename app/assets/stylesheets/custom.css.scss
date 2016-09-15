@@ -213,6 +213,12 @@ p {
 }
 /* homepage */
 
+@media all and (max-width: 430px) and (min-width: 360px) {
+.vidcontainter {
+  width: 10%;
+  height: 8000px;
+}
+}
 .vidcontainer {
   width: 50%;
   margin: 1% 0 0 10%;
