@@ -1,7 +1,5 @@
 class VideosController < ApplicationController
   before_action :admin_user,   only: [:new, :create]
-  # Render mobile or desktop depending on User-Agent for these actions.
-  before_filter :check_for_mobile, :only => [:new, :edit]
   include VideosHelper
     
   def new

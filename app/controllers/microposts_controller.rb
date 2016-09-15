@@ -1,7 +1,5 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  # Render mobile or desktop depending on User-Agent for these actions.
-  before_filter :check_for_mobile, :only => [:new, :edit]
   include VideosHelper
 
   def create
