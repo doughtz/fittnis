@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
   include VideosHelper
-  # Render mobile or desktop depending on User-Agent for these actions.
-  before_filter :check_for_mobile, :only => [:new, :edit]
   
   def home
     @microposts = current_video.microposts.all
