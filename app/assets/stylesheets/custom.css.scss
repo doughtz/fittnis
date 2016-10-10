@@ -271,22 +271,49 @@ p {
         clear: both;
         position: relative;
         height: 360px;
+        margin-bottom: 20px;
     }
     .commentbox {
       width: 90%;
       margin-left: 5%;
       margin-right: 5%;
+      margin-bottom: 1%;
+      margin-top: 1%;
       float: left;
       clear:both;
     }
     .microposts {
       height: 200px;
     }
+    
+    .nav {
+      overflow: hidden;
+    }
+    .navbar-nav {
+      margin: 0 0 0 0;
+    }
+    
+    .navbar-nav > li {
+      display: inline;
+      float: right;
+      margin-left: 5px;
+    }
+    .navbar-nav {
+    > li > a {
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background-color: rgba(255,255,255,.3);
+      color: white !important;
+      width: 85px !important;
+      text-align: center !important;
+      height: 40px !important;
+      padding-top: 0 !important;
+      line-height: 40px !important;
+              }
 }
 
-
 #flex {
-  border: 1px solid red;
   display: flex; 
   flex-direction: column;
   float: left;
@@ -297,6 +324,8 @@ p {
 
 #flex > #right-column-home { order: 2; }
 #flex > #b { order: 1; }
+
+}
 
 .vidTitle {
   font-size: 28px;
