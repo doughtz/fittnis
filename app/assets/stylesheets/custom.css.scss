@@ -245,6 +245,7 @@ p {
 
 .commentbox {
   width: 50%;
+  height: 130px;
   padding: 10px 10px 10px 20px;
   float: left;
   clear: left;
@@ -255,6 +256,47 @@ p {
   display: inline;
   box-shadow: rgba(0,0,0,.2) 0px 1px 5px 2px;
 }
+
+@media only screen and (max-width: 500px) {
+    .vidcontainer {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .video-details {
+      width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        float: left;
+        clear: both;
+        position: relative;
+        height: 360px;
+    }
+    .commentbox {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      float: left;
+      clear:both;
+    }
+    .microposts {
+      height: 200px;
+    }
+}
+
+
+#flex {
+  border: 1px solid red;
+  display: flex; 
+  flex-direction: column;
+  float: left;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+}
+
+#flex > #right-column-home { order: 2; }
+#flex > #b { order: 1; }
 
 .vidTitle {
   font-size: 28px;
