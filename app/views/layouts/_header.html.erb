@@ -1,19 +1,21 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container" style="padding-top: 10px; height: 5px">
-    <div id="some-div" data-no-turbolink> <%= link_to "fittnis", '/', id: "logo" %> </div>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
+<header>
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+      <div class="container">
+        <div id="some-div" data-no-turbolink> <%= link_to "fittnis", '/', id: "logo" %> </div>
+      <ul class="nav navbar-nav navbar-right" style="padding-right: 10px">
         <% if logged_in? %>
           <li class="dropdown">
-            <div class="dropdown-toggle" id="profile-image" data-toggle="dropdown" style="margin-right: 50px">
-              <center><%= current_user.image == nil ? image_tag("generic-user", size: "45x45", class: "img-responsive img-circle") : image_tag(current_user.image, size: "45x45", class: "img-responsive img-circle") %></center>
+            <div class="dropdown-toggle" id="profile-image" data-toggle="dropdown" style="margin-top:1px;height:60px;">
+              <%= current_user.image == nil ? image_tag("generic-user", size: "50x50", class: "img-responsive img-circle") : image_tag(current_user.image, size: "50x50", class: "img-responsive img-circle") %>
             </div>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              
               <% if current_user.admin? %>
               <li><%= link_to "Upload Video", '#' %></li>
               <% end %>
+              
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
@@ -21,10 +23,10 @@
             </ul>
           </li>
         <% else %>
-        <li style="padding-right: 5px;"><%= link_to "Sign Up", '/users/new', :style => 'background-color: orange', :class => "navbar-nav li a:hover" %></li>
+        <li style="padding-right: 5px;"><%= link_to "Sign Up", '/users/new', :style => 'background-color: orange' %></li>
         <li><%= link_to "Log in", '/login' %></li>
         <% end %>
       </ul>
+      </div>
     </nav>
-  </div>
 </header>

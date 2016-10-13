@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   include VideosHelper
   
   def home
-    @microposts = current_video.microposts.all
+    @microposts = current_video.microposts.all unless current_video.nil?
     @micropost = current_user.microposts.build if logged_in?
     @user = current_user if logged_in?
   end

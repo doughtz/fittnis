@@ -1,13 +1,28 @@
 $navbar-inverse-bg: orange;
 $navbar-inverse-brand-color: white;
 $navbar-inverse-border: orange;
+$grid-float-breakpoint: 100px;
 
 .container-fluid{
+   margin: 0% !important;
    padding: 0 !important;
 }
 
 nav {
-  height: 40px !important;
+  height: 60px !important;
+  line-height: 60px !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-right {
+  height: 60px;
+}
+
+nav > ul {
+  vertical-align: middle;
 }
 
 header h1 {
@@ -24,20 +39,6 @@ header h2 {
   font-size: 16pt;
   padding-top: 0;
   margin-top: 0;
-}
-
-.StreamsHero-buttonContainer {
-    color: white;
-    margin: 0 auto;
-    padding-top: 20px;
-    text-align: right;
-    width: 95%;
-    display: block;
-    line-height: 18px;
-    font-size: 14pt;
-}
-
-.StreamsHero-buttonContainer li a {
 }
 
 /* .navbar-inverse {
@@ -73,6 +74,8 @@ header h2 {
       height: 40px;
       padding-top: 0 !important;
       line-height: 40px !important;
+      margin-top: 10px;
+      float: right;
       
 }
 }
@@ -98,6 +101,12 @@ $gray-medium-light: #eaeaea;
 }
 body {
   padding-top: 60px;
+  width: 100% !important;
+  margin-right: 0px;
+}
+
+html {
+  width: 100%;
 }
 
 section {
@@ -148,10 +157,10 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 2.5em;
   color: white;
-  line-height: 45px;
+  margin-left: 10px;
+  line-height: 60px;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -168,49 +177,10 @@ p {
 
 #profile-image {
   padding: 2px 1px 2px 0px;
-  margin-top: -5px;
   border-radius: 5px;
   width: 60px;
 }
 
-.header-menu {
-  height: 60px;
-  background: white;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-}
-
-.category-menu {
-  width: 100%;
-  margin: 0 auto;
-  overflow: auto;
-  & ul {
-    text-align: center;
-    width: 99%;
-    overflow: auto;
-  }
-  
-  & li {
-    color: #777;
-    border-left: 1px solid #D3D3D3;
-    display: inline-block;
-    list-style: none;
-    height: 60px;
-    line-height: 60px;
-    font-size: 14pt;
-    text-align: center;
-    padding: 0px 30px 0px 30px;
-  }
-  & li.last {
-    border-right: 1px solid #D3D3D3;
-  }
-  & li:hover {
-    border-bottom: 5px solid #777;
-    transition: left 25ms ease-in-out, right 25ms ease-in-out;
-  }
-}
 /* homepage */
 
 .vidcontainer {
@@ -285,19 +255,7 @@ p {
     .microposts {
       height: 200px;
     }
-    
-    .nav {
-      overflow: hidden;
-    }
-    .navbar-nav {
-      margin: 0 0 0 0;
-    }
-    
-    .navbar-nav > li {
-      display: inline;
-      float: right;
-      margin-left: 5px;
-    }
+
     .navbar-nav {
     > li > a {
       border: 1px solid;
@@ -334,37 +292,6 @@ p {
 .quote {
   font-size: 22px;
   font-style: italic;
-}
-
-.workoutStat-left {
-  width: 50%;
-  float: left;
-  text-align: center;
-}
-
-.workoutStat-right {
-  border-left: 1px solid rgba(black, .2);
-  width: 50%;
-  float: left;
-  text-align: center;
-}
-.workoutStat-top-left {
-  border-top: 1px solid rgba(black, .2);
-  width: 50%;
-  float: left;
-  text-align: center;
-  margin-top: 5%;
-  font-size: 2vw;
-}
-
-.workoutStat-top-right {
-  border-top: 1px solid rgba(black, .2);
-  border-left: 1px solid rgba(black, .2);
-  width: 50%;
-  float: left;
-  text-align: center;
-  margin-top: 5%;
-  font-size: 2vw;
 }
 
 .body-div {
@@ -454,10 +381,7 @@ padright {
   overflow: hidden;
 }
 
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-}
+
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
@@ -595,198 +519,26 @@ span.picture {
 }
 /* Dashboard */
 
-.bigcontainer {
-  width: 1000px;
-  overflow: hidden;
-  float: center;
-  margin: 0 auto;
+.youtube-box {
+  box-shadow: rgba(0,0,0,.2) 1px 1px 1px 1px;
+  background: white;
+  padding: 20px 20px 20px 20px;
 }
 
-.datatimeperiod {
-  width: 1000px;
-  margin: 0 auto;
-  float:center;
-  background-color: white;
-  padding-bottom: 30px;
-  height: 170px;
-  border: 1px solid rgba(black, .2);
-}
-
-.datatimeperiod2 {
-  width: 24%;
-  margin-right: 10px;
-  overflow: hidden;
-  float:left;
-  background-color: white;
-  padding-bottom: 30px;
-  height: 150px;
-}
-
-.datatimeperiod3 {
-  width: 24%;
-  overflow: hidden;
-  float:left;
-  background-color: white;
-  padding-bottom: 30px;
-  height: 150px;
-}
-
-.datatimeperiod4 {
-  width: 49%;
-  overflow: hidden;
-  float:left;
-  background-color: white;
-  padding-bottom: 30px;
-  height: 150px;
+.top-spacing { 
   margin-top: 10px;
 }
 
-.datatimeperiod5 {
-  width: 49%;
-  overflow: hidden;
-  float:left;
-  background-color: white;
-  padding-bottom: 30px;
-  height: 150px;
-  margin-top: 10px;
+.crunched-box {
+  border: 1px solid rgba(0,0,0,.2);
+  background: white;
+  height: 155px;
 }
 
-.datatimeperiod6 {
-  width: 24%;
-  overflow: hidden;
-  float:right;
-  background-color: white;
-  padding-bottom: 10px;
-  height: 150px;
-}
-
-.datatimeperiod7 {
-  width: 24%;
-  margin-right: 10px;
-  overflow: hidden;
-  float:right;
-  background-color: white;
-  padding-bottom: 10px;
-  height: 150px;
-}
-
-.datacontainertitle {
-  font-size: 2em;
-  text-align: left;
-  padding-bottom: 10px;
-  float: left;
-  height: 170px;
-  line-height: 170px;
-  width: 20%;
-  text-align: center;
-}
-
-.datacontainertitle2 {
-  font-size: 1.2em;
-  color: black;
-  text-align: left;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  float: left;
-  width: 99%;
-}
-
-.datacontainertitle3 {
-  font-size: 1.2em;
-  color: black;
-  text-align: left;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  float: left;
-  width: 99%;
+.bolded-font {
   font-weight: bold;
 }
-
-.timeperiodcontainer {
-  width:100%;
-  float:left;
-}
-.workoutcat {
-  color: $gray-light;
-  width: 150px;
-
-}
-
-.workoutcat2 {
-  color: $gray;
-  font-weight: bold;
-  float: left;
-  width: 50%;
-  font-size: 1.5em;
-  height: 38px;
-  line-height: 38px;
-  text-align: right;
-  padding-right: 10px;
-}
-
-.workoutdata {
-  color: $gray-light;
-  width: 150px;
-  font-size: 2.5em;
-
-}
-
-.workoutdata2 {
-  color: $gray-light;
-  width: 20px;
-  font-size: 0.7em;
-
-}
-
-.workoutdatacontainer {
-  width: 25%;
-  float: left;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  padding-top: 10px;
-}
-
-.workoutdatacontainer2 {
-  width: 50%;
-  float: left;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  padding-top: 10px;
-  
-}
-
-.workoutdatacontainer3 {
-  width: 50%;
-  float: left;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  padding-top: 10px;
-  font-weight: bold;
-  
-}
-
-.onepctspacer {
-  width: 2%;
-  float: left;
-  height: 1px;
-  margin-top: 10px;
-  height: 50px;
-}
-
-/* Dashboard */
-
-.helper {
-    display: inline-block;
-    height: 110px;
-    vertical-align: middle;
-    width: 300px;
-}
-
-.helper2 {
-    width: 300px;
-    margin: 0 auto;
-}
-
+/* header id */
 #some-div {
   text-align: center;
 }
