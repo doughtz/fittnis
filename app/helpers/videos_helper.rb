@@ -26,7 +26,7 @@ module VideosHelper
   def video_exists
     current_video
     defined_video = defined? @current_video
-    if defined_video.nil?
+    if defined_video.nil? || @current_video.nil?
       return false
     else
       return true
