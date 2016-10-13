@@ -24,7 +24,8 @@ module VideosHelper
   end
   
   def video_exists
-    defined_video = defined? the_video
+    current_video
+    defined_video = defined? @current_video
     if defined_video.nil?
       return false
     else
