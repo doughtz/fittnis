@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
   end
   
   def refresher
-    @microposts = current_video.microposts.all
+    @microposts = current_video.microposts.all unless current_video.nil?
     
     respond_to do |format|
     format.js
