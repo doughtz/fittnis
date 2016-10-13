@@ -6,7 +6,7 @@
       <h3 style="text-decoration: underline">Comments (<div id="commentCount"><%= current_video.microposts.count if video_exists %></div>)</h3>
 
       <div class="microposts" id="reload">
-        <%= render @microposts %>
+        <%= render @microposts if video_exists %>
       </div>
         
       <div class="microposts2" id="reload2">
