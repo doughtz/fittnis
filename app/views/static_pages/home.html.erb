@@ -1,9 +1,9 @@
 <div class="body-div">
-  <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile %>-oEEyLY9V.js"></script></div>
+  <div class="vidcontainer"><script src="//content.jwplatform.com/players/<%= current_video.videofile unless current_video.nil? %>-oEEyLY9V.js"></script></div>
   <div id="flex">
   <div class="video-details" id="right-column-home">
     <div class="comments">
-      <h3 style="text-decoration: underline">Comments (<div id="commentCount"><%= current_video.microposts.count %></div>)</h3>
+      <h3 style="text-decoration: underline">Comments (<div id="commentCount"><%= current_video.microposts.count unless current_video.nil? %></div>)</h3>
 
       <div class="microposts" id="reload">
         <%= render @microposts %>
