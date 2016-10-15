@@ -1,6 +1,7 @@
 $navbar-inverse-bg: orange;
 $navbar-inverse-brand-color: white;
 $navbar-inverse-border: orange;
+$grid-float-breakpoint: 100px;
 
 .container-fluid{
    margin: 0% !important;
@@ -9,6 +10,19 @@ $navbar-inverse-border: orange;
 
 nav {
   height: 60px !important;
+  line-height: 60px !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-right {
+  height: 60px;
+}
+
+nav > ul {
+  vertical-align: middle;
 }
 
 header h1 {
@@ -60,6 +74,8 @@ header h2 {
       height: 40px;
       padding-top: 0 !important;
       line-height: 40px !important;
+      margin-top: 10px;
+      float: right;
       
 }
 }
