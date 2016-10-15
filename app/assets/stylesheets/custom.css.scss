@@ -1,7 +1,6 @@
 $navbar-inverse-bg: orange;
 $navbar-inverse-brand-color: white;
 $navbar-inverse-border: orange;
-$grid-float-breakpoint: 100px;
 
 .container-fluid{
    margin: 0% !important;
@@ -10,19 +9,6 @@ $grid-float-breakpoint: 100px;
 
 nav {
   height: 60px !important;
-  line-height: 60px !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.navbar-right {
-  height: 60px;
-}
-
-nav > ul {
-  vertical-align: middle;
 }
 
 header h1 {
@@ -74,8 +60,6 @@ header h2 {
       height: 40px;
       padding-top: 0 !important;
       line-height: 40px !important;
-      margin-top: 10px;
-      float: right;
       
 }
 }
@@ -255,7 +239,19 @@ p {
     .microposts {
       height: 200px;
     }
-
+    
+    .nav {
+      overflow: hidden;
+    }
+    .navbar-nav {
+      margin: 0 0 0 0;
+    }
+    
+    .navbar-nav > li {
+      display: inline;
+      float: right;
+      margin-left: 5px;
+    }
     .navbar-nav {
     > li > a {
       border: 1px solid;
@@ -394,6 +390,7 @@ padright {
   width: 95%;
   overflow: scroll;
   position: absolute;
+  /*box-shadow: rgba(0,0,0,.2) 1px 1px 1px 1px; */
   bottom: 125px;
   top: 50px;
   li {
