@@ -263,9 +263,7 @@ p {
       height: 200px;
     }
     
-    .nav {
-      overflow: hidden;
-    }
+    
     .navbar-nav {
       margin: 0 0 0 0;
     }
@@ -288,19 +286,17 @@ p {
       padding-top: 0 !important;
       line-height: 40px !important;
               }
-}
-
-#flex {
-  display: flex; 
-  flex-direction: column;
-  float: left;
-  clear: both;
-  width: 100%;
-  overflow: hidden;
-}
-
-#flex > #right-column-home { order: 2; }
-#flex > #b { order: 1; }
+    }
+    #flex {
+      display: flex; 
+      flex-direction: column;
+      float: left;
+      clear: both;
+      width: 100%;
+      overflow: hidden;
+    }
+    #flex > #right-column-home { order: 2; }
+    #flex > #b { order: 1; }
 
 }
 
