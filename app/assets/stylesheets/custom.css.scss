@@ -545,6 +545,10 @@ span.picture {
   margin-top: 10px;
 }
 
+.small-bottom-margin {
+  margin-bottom: 6px;
+}
+
 .crunched-box {
   border: 1px solid rgba(0,0,0,.2);
   background: white;
@@ -557,4 +561,9 @@ span.picture {
 /* header id */
 #some-div {
   text-align: center;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
 }
