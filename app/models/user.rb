@@ -34,11 +34,12 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.password = user.password_confirmation = SecureRandom.urlsafe_base64(n=6)
       user.username = Faker::Lorem.characters(char_count = 15)
+      defined_email = defined? user.email
       if user.email == nil
         if auth.info.email != nil
           user.email = auth.info.email
-        else
-          user.email == "example@example.com"
+       else
+          user.email = "youremail@youremail.com"
         end
       end
       user.save!
