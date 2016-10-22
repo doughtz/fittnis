@@ -1,57 +1,60 @@
 <% provide(:title, @user.name) %>
-  
+<% if User.find(params[:id]) == current_user %>  
 <div class="row">
   <% if @user.time_zone == nil %>
-  <div class="alert alert-danger" style="width: 70%; margin-left: 15%">
+  <div class="alert alert-danger" style="width: 70%; margin-left: 15%;">
     Your time zone is not set. Go to "<%= link_to "Settings", edit_user_path(current_user) %>" to set your time zone to have accurate statistics.
     </div>
   <% end %>
 </div>
+<% end %>
   <h2>Workout Dashboard</h2>
   
   
   
 <!-- BEGIN OVERALL BLOCK -->
 <div class="row center">
-  <div class="col-sm-8 col-sm-offset-2 youtube-box">
-    <div class="row vertical-align">
-      <div class="col-xs-12 col-sm-3">
-        Overall
-      </div>
-      <div class="col-xs-4 col-sm-3">
+  <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2" style="padding: 0 0 0 0;">
+    <div class="col-xs-12" style="padding: 0px 0px 0px 0px">
+      <div class="youtube-box overallStats">
+        <div class="col-xs-12 bigBlack" style="padding: 0px 0px 20px 0px;">
+          Overall
+        </div>
+      <div class="col-xs-4">
         <div class="col-sm-12 small-bottom-margin">
         <%= image_tag("workout_icon.png", size: "75x75") %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bigOrange">
         <%= @user.workouts == nil ? "0" : @user.workouts %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bolded-font">
         Workouts
         </div>
       </div>
-      <div class="col-xs-4 col-sm-3">
+      <div class="col-xs-4">
         <div class="col-sm-12 small-bottom-margin">
         <%= image_tag("stopwatch_icon.png", size: "75x75") %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bigOrange">
         <%= @user.overall_workoutseconds %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bolded-font">
         Duration
         </div>
       </div>
-      <div class="col-xs-4 col-sm-3">
+      <div class="col-xs-4">
         <div class="col-sm-12 small-bottom-margin">
         <%= image_tag("calories_icon.png", size: "75x75") %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bigOrange">
         <%= number_with_delimiter(@user.overall_calspersec.to_i, :delimiter => ',') %>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 bolded-font">
         Calories burned
         </div>
+        </div>
       </div>
-    </div>
+      </div>
   </div>
 </div>
 <!-- END OVERALL BLOCK -->
@@ -60,8 +63,9 @@
     
 <!-- BEGIN MAIN BLOCK -->
 <div class="row">
-  <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 youtube-box top-spacing" style="padding: 0 0 0 0;">
-    <div class="col-xs-6 col-md-3 crunched-box bolded-font">
+  <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 top-spacing" style="padding: 0 0 0 0;">
+    <div class="col-xs-6 col-md-3 bolded-font" style="padding: 0px 5px 0px 0px !important;">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         Today
       </div>
@@ -83,8 +87,10 @@
       <div class="col-xs-6 top-spacing">
         <%= @user.today_calspersec %>
       </div>
+      </div>
     </div>
-    <div class="col-xs-6 col-md-3 crunched-box">
+    <div class="col-xs-6 col-md-3 shrinkRight">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         Yesterday
       </div>
@@ -107,7 +113,9 @@
         <%= @user.yesterday_calspersec %>
       </div>
     </div>
-    <div class="col-xs-6 col-md-3 crunched-box">
+    </div>
+    <div class="col-xs-6 col-md-3 shrinkLeft">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         This Week
       </div>
@@ -129,8 +137,10 @@
       <div class="col-xs-6 top-spacing">
         <%= @user.calories_for_this_week %>
       </div>
+      </div>
     </div>
-    <div class="col-xs-6 col-md-3 crunched-box">
+    <div class="col-xs-6 col-md-3 smallTop-space">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         Last Week
       </div>
@@ -152,6 +162,7 @@
       <div class="col-xs-6 top-spacing">
         <%= @user.calories_for_last_week %>
       </div>
+      </div>
     </div>
   </div>
 </div>
@@ -160,8 +171,9 @@
 
 <!-- BEGIN MONTHLY BLOCK -->
 <div class="row">
-  <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 youtube-box top-spacing" style="padding: 0 0 0 0;margin-bottom: 50px;">
-    <div class="col-xs-6 crunched-box">
+  <div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 top-spacing" style="padding: 0 0 0 0;margin-bottom: 50px;">
+    <div class="col-xs-6" style="padding: 0px 5px 0px 0px !important;">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         This month
       </div>
@@ -183,8 +195,10 @@
       <div class="col-xs-6 top-spacing">
         <%= @user.current_month_calspersec %>
       </div>
+      </div>
     </div>
-    <div class="col-xs-6 crunched-box">
+    <div class="col-xs-6" style="padding: 0px 0px 0px 5px !important;">
+      <div class="youtube-box" style="overflow:hidden;">
       <div class="col-xs-12 top-spacing" style="margin-bottom: 10px;">
         Last Month
       </div>
@@ -205,6 +219,7 @@
       </div>
       <div class="col-xs-6 top-spacing">
         <%= @user.last_month_calspersec %>
+      </div>
       </div>
     </div>
   </div>

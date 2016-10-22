@@ -227,79 +227,6 @@ p {
   box-shadow: rgba(0,0,0,.2) 0px 1px 5px 2px;
 }
 
-@media only screen and (max-width: 1024px) {
-    .vidcontainer {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    .video-details {
-      width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        float: left;
-        clear: both;
-        position: relative;
-        height: 360px;
-        margin-bottom: 20px;
-    }
-    .commentbox {
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-bottom: 1%;
-      margin-top: 2%;
-      float: left;
-      clear:both;
-    }
-    .vidTitle {
-      font-size: 26px !important;
-    }
-    .quote {
-      font-size: 20px !important;
-      font-style: italic;
-    }
-    .microposts {
-      height: 200px;
-    }
-    
-    
-    .navbar-nav {
-      margin: 0 0 0 0;
-    }
-    
-    .navbar-nav > li {
-      display: inline;
-      float: right;
-      margin-left: 5px;
-    }
-    .navbar-nav {
-    > li > a {
-      border: 1px solid;
-      border-color: rgba(255, 255, 255, 0.3);
-      border-radius: 5px;
-      background-color: rgba(255,255,255,.3);
-      color: white !important;
-      width: 85px !important;
-      text-align: center !important;
-      height: 40px !important;
-      padding-top: 0 !important;
-      line-height: 40px !important;
-              }
-    }
-    #flex {
-      display: flex; 
-      flex-direction: column;
-      float: left;
-      clear: both;
-      width: 100%;
-      overflow: hidden;
-    }
-    #flex > #right-column-home { order: 2; }
-    #flex > #b { order: 1; }
-
-}
-
 .vidTitle {
   font-size: 28px;
 }
@@ -542,7 +469,7 @@ span.picture {
 }
 
 .top-spacing { 
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .small-bottom-margin {
@@ -558,6 +485,7 @@ span.picture {
 .bolded-font {
   font-weight: bold;
 }
+
 /* header id */
 #some-div {
   text-align: center;
@@ -566,4 +494,138 @@ span.picture {
 .vertical-align {
     display: flex;
     align-items: center;
+}
+
+.bigOrange {
+  font-size: 1.5em;
+  color: orange;
+  font-weight: bold;
+}
+
+.bigBlack {
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+}
+
+.leftMargin {
+  margin-left: 10px;
+}
+
+.smallerPadding {
+  padding: 5px 5px 5px 5px !important;
+}
+
+.shrinkRight {
+  padding: 0px 5px 0px 5px;
+}
+
+.shrinkLeft{
+  padding: 0px 5px 0px 5px;
+}
+
+.smallTop-space {
+  padding: 0px 0px 0px 5px;
+}
+
+.overall {
+  overflow:hidden;
+  height: 171px;
+  width: 100%;
+  line-height: 131px;
+}
+
+.overallStats {
+  overflow:hidden;
+  padding: 10px 0 20px 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .vidcontainer {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .video-details {
+      width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        float: left;
+        clear: both;
+        position: relative;
+        height: 360px;
+        margin-bottom: 20px;
+    }
+    .commentbox {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 1%;
+      margin-top: 2%;
+      float: left;
+      clear:both;
+    }
+    .vidTitle {
+      font-size: 26px !important;
+    }
+    .quote {
+      font-size: 20px !important;
+      font-style: italic;
+    }
+    .microposts {
+      height: 200px;
+    }
+    
+    
+    .navbar-nav {
+      margin: 0 0 0 0;
+    }
+    
+    .navbar-nav > li {
+      display: inline;
+      float: right;
+      margin-left: 5px;
+    }
+    .navbar-nav {
+    > li > a {
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background-color: rgba(255,255,255,.3);
+      color: white !important;
+      width: 85px !important;
+      text-align: center !important;
+      height: 40px !important;
+      padding-top: 0 !important;
+      line-height: 40px !important;
+              }
+    }
+    #flex {
+      display: flex; 
+      flex-direction: column;
+      float: left;
+      clear: both;
+      width: 100%;
+      overflow: hidden;
+    }
+    #flex > #right-column-home { order: 2; }
+    #flex > #b { order: 1; }
+    
+    .shrinkRight {
+      padding: 0px 0px 5px 5px;
+    }
+    
+    .shrinkLeft{
+      padding: 5px 5px 0px 0px;
+    }
+    
+    .smallTop-space {
+      padding-top: 5px;
+    }
+    
+    .overall {
+      padding: 0px 0px 5px 0px;
+    }
+
 }
