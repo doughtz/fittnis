@@ -1,15 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
 @charset "UTF-8";
-/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .container-fluid {
+  margin: 0% !important;
   padding: 0 !important;
 }
 
-/* line 9, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 11, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 nav {
-  height: 40px !important;
+  height: 60px !important;
+  line-height: 60px !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-/* line 13, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 20, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.navbar-right {
+  height: 60px;
+}
+
+/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+nav > ul {
+  vertical-align: middle;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 header h1 {
   color: white;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -19,24 +51,12 @@ header h1 {
   font-size: 28pt;
 }
 
-/* line 22, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 header h2 {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16pt;
   padding-top: 0;
   margin-top: 0;
-}
-
-/* line 29, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.StreamsHero-buttonContainer {
-  color: white;
-  margin: 0 auto;
-  padding-top: 20px;
-  text-align: right;
-  width: 95%;
-  display: block;
-  line-height: 18px;
-  font-size: 14pt;
 }
 
 /* .navbar-inverse {
@@ -57,12 +77,12 @@ header h2 {
     color: $navbar-inverse-color;
   }
   */
-/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 62, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .navbar-inverse {
-  height: 270px;
+  height: 60px;
 }
 
-/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .navbar-nav > li > a {
   border: 1px solid;
   border-color: rgba(255, 255, 255, 0.3);
@@ -74,9 +94,11 @@ header h2 {
   height: 40px;
   padding-top: 0 !important;
   line-height: 40px !important;
+  margin-top: 10px;
+  float: right;
 }
 
-/* line 81, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 84, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .navbar-nav > li > a:hover {
   color: orange !important;
   background-color: white !important;
@@ -1951,7 +1973,7 @@ dd {
 .dl-horizontal dd:after {
   clear: both;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 211, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_type.scss */
   .dl-horizontal dt {
     float: left;
@@ -4583,7 +4605,7 @@ tbody.collapse.in {
   margin-bottom: 1px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 205, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_dropdowns.scss */
   .navbar-right .dropdown-menu {
     right: 0;
@@ -5193,7 +5215,7 @@ tbody.collapse.in {
 .navbar:after {
   clear: both;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 11, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar {
     border-radius: 4px;
@@ -5209,7 +5231,7 @@ tbody.collapse.in {
 .navbar-header:after {
   clear: both;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 31, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-header {
     float: left;
@@ -5238,7 +5260,7 @@ tbody.collapse.in {
 .navbar-collapse.in {
   overflow-y: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 50, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-collapse {
     width: auto;
@@ -5284,7 +5306,7 @@ tbody.collapse.in {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 108, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .container > .navbar-header,
   .container > .navbar-collapse,
@@ -5300,7 +5322,7 @@ tbody.collapse.in {
   z-index: 1000;
   border-width: 0 0 1px;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 128, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-static-top {
     border-radius: 0;
@@ -5317,7 +5339,7 @@ tbody.collapse.in {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 138, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-fixed-top,
   .navbar-fixed-bottom {
@@ -5350,7 +5372,7 @@ tbody.collapse.in {
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 177, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
@@ -5385,7 +5407,7 @@ tbody.collapse.in {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 190, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-toggle {
     display: none;
@@ -5402,7 +5424,7 @@ tbody.collapse.in {
   padding-bottom: 10px;
   line-height: 20px;
 }
-@media (max-width: 767px) {
+@media (max-width: 99px) {
   /* line 240, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-nav .open .dropdown-menu {
     position: static;
@@ -5427,7 +5449,7 @@ tbody.collapse.in {
     background-image: none;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 229, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-nav {
     float: left;
@@ -5448,7 +5470,7 @@ tbody.collapse.in {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 289, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-left {
     float: left !important;
@@ -5471,13 +5493,13 @@ tbody.collapse.in {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-@media (max-width: 767px) {
+@media (max-width: 99px) {
   /* line 315, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 303, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-form {
     width: auto;
@@ -5529,7 +5551,7 @@ tbody.collapse.in {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /* line 375, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-text {
     float: left;
@@ -5601,7 +5623,7 @@ tbody.collapse.in {
   background-color: #e7e7e7;
   color: #555;
 }
-@media (max-width: 767px) {
+@media (max-width: 99px) {
   /* line 470, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #777;
@@ -5646,7 +5668,7 @@ tbody.collapse.in {
 /* line 528, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse {
   background-color: orange;
-  border-color: #D3D3D3;
+  border-color: orange;
 }
 /* line 532, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-inverse .navbar-brand {
@@ -5702,14 +5724,14 @@ tbody.collapse.in {
   background-color: #cc8400;
   color: #fff;
 }
-@media (max-width: 767px) {
+@media (max-width: 99px) {
   /* line 604, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #D3D3D3;
+    border-color: orange;
   }
   /* line 607, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #D3D3D3;
+    background-color: orange;
   }
   /* line 610, /usr/local/rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
@@ -8109,44 +8131,49 @@ button.close {
 }
 /* mixins, variables, etc. */
 /* universal */
-/* line 96, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 99, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 * {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-/* line 99, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 102, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 body {
-  padding-top: 260px;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
+  padding-top: 60px;
+  width: 100% !important;
+  margin-right: 0px;
 }
 
-/* line 105, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 108, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+html {
+  width: 100%;
+}
+
+/* line 112, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 section {
   overflow: auto;
 }
 
-/* line 109, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 116, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 113, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 120, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .center {
   text-align: center;
 }
-/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
 /* typography */
-/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 129, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 126, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -8154,9 +8181,9 @@ h1 {
   text-align: center;
 }
 
-/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 140, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 h2 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -8164,137 +8191,238 @@ h2 {
   color: #777777;
 }
 
-/* line 142, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 150, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
 /* header */
-/* line 150, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 158, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 2.5em;
   color: white;
-  line-height: 45px;
+  margin-left: 10px;
+  line-height: 60px;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 160, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 168, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 #logo:hover {
   color: white;
   text-decoration: none;
 }
 
-/* line 166, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-header {
-  /* animation magic */
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
+/* line 174, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+#profile-image:hover {
+  background: rgba(204, 101, 0, 0.2);
 }
 
-/* line 172, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.bodyshrink {
-  padding-top: 150px;
+/* line 178, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+#profile-image {
+  padding: 2px 1px 2px 0px;
+  border-radius: 5px;
+  width: 60px;
 }
 
-/* line 176, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.bodyshrink1 {
-  padding-top: 150px;
+/* homepage */
+/* line 186, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.vidcontainer {
+  width: 50%;
+  margin: 1% 0 0 10%;
+  float: left;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 2px;
 }
 
-/* line 180, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.shrink {
-  height: 150px;
-}
-/* line 182, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.shrink h1 {
-  margin-top: -100px;
-}
-/* line 185, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.shrink h2 {
-  color: orange;
-}
-
-/* line 190, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.header-menu {
-  height: 60px;
+/* line 193, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.vidstats {
+  width: 29%;
+  margin: 1% 0 0 1%;
+  padding: 0 0 0 0;
+  float: left;
   background: white;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  text-align: center;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
 }
 
-/* line 199, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.category-menu {
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.video-details {
+  width: 29%;
+  margin: 1% 10% 0 1%;
+  padding: 0 0 1% 0;
+  float: right;
+  display: inline;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 2px;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  bottom: 13px;
+}
+
+/* line 216, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.commentbox {
+  width: 50%;
+  height: 130px;
+  padding: 10px 10px 10px 20px;
+  float: left;
+  clear: left;
+  background: white;
+  margin-top: 13px;
+  margin-left: 10%;
+  margin-bottom: 13px;
+  display: inline;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 231, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .vidcontainer {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  /* line 236, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .video-details {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    clear: both;
+    position: relative;
+    height: 360px;
+    margin-bottom: 20px;
+  }
+
+  /* line 246, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .commentbox {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    float: left;
+    clear: both;
+  }
+
+  /* line 255, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .vidTitle {
+    font-size: 26px !important;
+  }
+
+  /* line 258, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .quote {
+    font-size: 20px !important;
+    font-style: italic;
+  }
+
+  /* line 262, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .microposts {
+    height: 200px;
+  }
+
+  /* line 267, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .navbar-nav {
+    margin: 0 0 0 0;
+  }
+
+  /* line 271, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .navbar-nav > li {
+    display: inline;
+    float: right;
+    margin-left: 5px;
+  }
+
+  /* line 277, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  .navbar-nav > li > a {
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white !important;
+    width: 85px !important;
+    text-align: center !important;
+    height: 40px !important;
+    padding-top: 0 !important;
+    line-height: 40px !important;
+  }
+
+  /* line 290, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  #flex {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* line 298, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  #flex > #right-column-home {
+    order: 2;
+  }
+
+  /* line 299, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+  #flex > #b {
+    order: 1;
+  }
+}
+/* line 303, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.vidTitle {
+  font-size: 28px;
+}
+
+/* line 307, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.quote {
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* line 312, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.body-div {
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+  float: left;
   width: 100%;
-  margin: 0 auto;
-  overflow: auto;
-}
-/* line 203, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.category-menu ul {
-  text-align: center;
-  width: 99%;
-  overflow: auto;
-}
-/* line 209, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.category-menu li {
-  color: #777;
-  border-left: 1px solid #D3D3D3;
-  display: inline-block;
-  list-style: none;
-  height: 60px;
-  line-height: 60px;
-  font-size: 14pt;
-  text-align: center;
-  padding: 0px 30px 0px 30px;
-}
-/* line 220, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.category-menu li.last {
-  border-right: 1px solid #D3D3D3;
-}
-/* line 223, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
-.category-menu li:hover {
-  border-bottom: 5px solid #777;
-  transition: left 25ms ease-in-out, right 25ms ease-in-out;
+  height: 100%;
 }
 
 /* footer */
-/* line 231, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 323, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777777;
 }
-/* line 236, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 328, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer a {
   color: #555555;
 }
-/* line 238, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 330, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer a:hover {
   color: #222222;
 }
-/* line 242, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 334, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer small {
   float: left;
 }
-/* line 245, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 337, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 248, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 340, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 footer ul li {
   float: left;
   margin-left: 15px;
 }
 
-/* line 255, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 347, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .wrapper-image {
   clear: both;
   position: relative;
@@ -8303,12 +8431,12 @@ footer ul li {
 }
 
 /* forms */
-/* line 264, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 356, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
 }
-/* line 267, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 359, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .checkbox span {
   color: black;
   font-size: 14pt;
@@ -8317,29 +8445,257 @@ footer ul li {
   border: 1px solid red;
 }
 
-/* line 276, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 368, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 #session_remember_me {
   width: auto;
   margin-left: 0;
 }
 
-/* line 281, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 373, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 padright {
   padding-left: 20px;
   font-weight: normal;
 }
 
 /* Users index */
-/* line 288, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 380, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .users {
   list-style: none;
   margin: 0;
 }
-/* line 291, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+/* line 383, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
 .users li {
   overflow: auto;
   padding: 10px 0;
   border-bottom: 1px solid #eeeeee;
+  color: black;
+}
+
+/* microposts */
+/* line 393, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.comments {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  overflow: hidden;
+}
+
+/* line 400, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* line 406, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts {
+  list-style: none;
+  padding: 0;
+  width: 95%;
+  overflow: scroll;
+  position: absolute;
+  /*box-shadow: rgba(0,0,0,.2) 1px 1px 1px 1px; */
+  bottom: 125px;
+  top: 50px;
+}
+/* line 415, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts li {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+/* line 419, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts .user {
+  margin-top: 5em;
+  padding-top: 0;
+}
+/* line 423, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts .content {
+  display: block;
+  margin-left: 60px;
+}
+/* line 426, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts .content img {
+  display: block;
+  padding: 5px 0;
+}
+/* line 431, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts .timestamp {
+  color: #777777;
+  display: inline;
+  font-size: 10px;
+  font-style: italic;
+}
+/* line 437, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts .gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 444, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+/* line 450, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+span.picture {
+  margin-top: 10px;
+}
+/* line 452, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+span.picture input {
+  border: 0;
+}
+
+/* line 456, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2-nomicroposts {
+  list-style: none;
+  bottom: 4%;
+  position: absolute;
+  width: 90%;
+  padding: 0;
+}
+
+/* line 464, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 {
+  list-style: none;
+  bottom: 4%;
+  position: absolute;
+  width: 90%;
+  padding: 0;
+}
+/* line 470, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 li {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+/* line 474, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 .user {
+  margin-top: 5em;
+  padding-top: 0;
+}
+/* line 478, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 .content {
+  display: block;
+  margin-left: 60px;
+}
+/* line 481, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 .content img {
+  display: block;
+  padding: 5px 0;
+}
+/* line 486, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 .timestamp {
+  color: #777777;
+  display: inline;
+  font-size: 10px;
+  font-style: italic;
+}
+/* line 492, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts2 .gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 499, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+/* line 505, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+span.picture {
+  margin-top: 10px;
+}
+/* line 507, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+span.picture input {
+  border: 0;
+}
+
+/* line 512, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.micropostUsername {
+  color: orange;
+  display: inline;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* line 519, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.micropostContent {
+  width: 100%;
+  word-break: break-all;
+}
+
+/* line 524, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+#commentCount {
+  display: inline;
+}
+
+/* line 528, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.microposts3 {
+  list-style: none;
+  bottom: 14%;
+  position: absolute;
+  width: 90%;
+  padding: 0;
+  text-align: center;
+}
+
+/* Dashboard */
+/* line 538, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.youtube-box {
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px 1px;
+  background: white;
+  padding: 20px 20px 20px 20px;
+}
+
+/* line 544, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.top-spacing {
+  margin-top: 5px;
+}
+
+/* line 548, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.small-bottom-margin {
+  margin-bottom: 6px;
+}
+
+/* line 552, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.crunched-box {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: white;
+  height: 155px;
+}
+
+/* line 558, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.bolded-font {
+  font-weight: bold;
+}
+
+/* header id */
+/* line 563, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+#some-div {
+  text-align: center;
+}
+
+/* line 567, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+/* line 572, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.bigOrange {
+  font-size: 1em;
+  color: orange;
+  font-weight: bold;
+}
+
+/* line 578, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.leftMargin {
+  margin-left: 10px;
+}
+
+/* line 582, /home/ubuntu/workspace/app/assets/stylesheets/custom.css.scss */
+.smallerPadding {
+  padding: 5px 5px 5px 5px !important;
 }
 /* line 5, /home/ubuntu/workspace/app/assets/stylesheets/static_pages.scss */
 .header1 {
@@ -8656,19 +9012,3 @@ input {
   padding-bottom: 20px;
   padding-left: 70px;
 }
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
-
-
- */
-
