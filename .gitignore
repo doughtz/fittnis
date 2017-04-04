@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the large video files
+/assets/Fittniss_Video.mp4
