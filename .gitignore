@@ -18,3 +18,5 @@
 
 # Ignore the large video files
 /assets/Fittniss_Video.mp4
+/assets/DailyWorkout07052016.mp4
+/assets/*.mp4
