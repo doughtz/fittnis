@@ -1,8 +1,8 @@
 User.create!(name:  "Dan Doughty",
-             email: "daniel.doughty@hotmail.com",
+             email: "dannydoughtz@yahoo.com",
              username: "ddoughty",
-             password:              "Banister768",
-             password_confirmation: "Banister768",
+             password:              "bad_pass",
+             password_confirmation: "bad_pass",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
@@ -46,5 +46,5 @@ end
 videos = Video.order(:created_at).take(50)
 50.times do
   content = Faker::Lorem.sentence(5)
-  videos.each { |video| video.microposts.create!(content: content, user: User.find(1)) }
+  videos.each { |video| video.microposts.create!(content: content, user: User.last) }
 end
